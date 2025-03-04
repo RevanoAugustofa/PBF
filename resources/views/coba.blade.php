@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>SIP - Cuti</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
 </head>
-<body class="bg-gray-100">
+<body>
     <x-layout username="Revano Augustofa" nim="2301022071">
         <div class="flex-1 p-6">
             <div class="mt-4">
-                <p class="text-gray-600">> Data Mahasiswa</p>
+                <p class="text-gray-600">> Pengajuan Cuti</p>
                 <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Riwayat berhenti studi mahasiswa.</span></h2>
             </div>
 
             <div class="bg-white p-4 rounded shadow mt-4">
                 <div class="flex justify-between items-center border-b pb-2">
                     <div class="flex space-x-4">
-                       <button class="px-4 py-2 border-blue-500 border-b-4 font-semibold">Data Mahasiswa</button> 
-                       <a href="pengajuanCuti"><button class="px-4 py-2 text-gray-600">Pengajuan Cuti</button></a>
+                       <a href="dashboard_mhs"><button class="px-4 py-2 text-gray-600 ">Data Mahasiswa</button></a> 
+                        <button class="px-4 py-2  border-blue-500 font-semibold">Pengajuan Cuti</button>
                     </div>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded flex items-center">+ Tambah</button>
                 </div>
                 
                 <div class="flex flex-col md:flex-row pt-4">
@@ -52,4 +54,5 @@
         </div>
 </x-layout>
 </body>
+
 </html>

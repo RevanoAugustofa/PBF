@@ -4,14 +4,14 @@
     <nav class="bg-blue-600 text-white p-4 flex justify-between items-center">
         <div class="text-lg font-bold">SIP - Cuti</div>
         <div class="flex items-center">
-            <div class="w-12 h-12 rounded-full bg-gray-300 mr-3"></div>
+            <div class="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
             <span>{{ $username }}</span>
         </div>
     </nav>
     
     <div class="flex">
         <!-- Sidebar -->
-        <div class="w-[100px] bg-white text-white p-5 min-h-screen">
+        <div class="w-1/4 bg-white text-white p-5 min-h-screen">
             <div class="flex items-center mb-8 text-black">
                 <div class="w-12 h-12 rounded-full bg-gray-300 mr-3"></div>
                 <div>

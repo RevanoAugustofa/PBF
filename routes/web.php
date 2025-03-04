@@ -6,20 +6,14 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('/coba', function () {
+    return view('coba');
 });
 
-
-Route::get('/home', function () {
-    return view('home');
+Route::get('/pengajuanCuti', function () {
+    return view('pengajuanCuti');
 });
 
-Route::get('/index', function () {
-    return view('index');
+Route::get('/dashboard_mhs', function () {
+    return view('dashboard_mhs');
 });
-
-Route::get('/dash function () {
-    return view('dashboard');
-});
-
