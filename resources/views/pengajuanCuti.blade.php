@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIP - Cuti</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
     <script src="js/script.js" defer></script>  <!-- Tambahkan script.js -->
 </head>
 <body class="bg-gray-100">
@@ -20,7 +22,7 @@
             <div class="bg-white p-4 rounded shadow mt-4">
                 <div class="flex justify-between items-center border-b pb-2">
                     <div class="flex space-x-4">
-                       <a href="dashboard_mhs"><button class="px-4 py-2 text-gray-600 ">Data Mahasiswa</button></a> 
+                       <a href="dashboard_mhs"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Data Mahasiswa</button></a> 
                         <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Pengajuan Cuti</button>
                     </div>
                     <button class="bg-green-500 text-white px-4 py-2 rounded flex items-center">+ Tambah</button>

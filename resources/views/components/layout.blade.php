@@ -6,7 +6,10 @@
         <div class="flex items-center">
             <div class="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
             <span>{{ $username }}</span>
+            <div><i class="ri-notification-3-fill pr-5 pl-3"></i></div>
         </div>
+        
+        
     </nav>
     
     <div class="flex">
