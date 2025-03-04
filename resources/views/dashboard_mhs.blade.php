@@ -41,10 +41,10 @@
                             <tr class="bg-gray-100"><td class="p-4 font-semibold">Tempat/ Tgl Lahir</td><td class="p-4">-</td></tr>
                             <tr class="bg-white"><td class="p-4 font-semibold">Jenis Kelamin</td><td class="p-4">-</td></tr>
                             <tr class="bg-gray-100"><td class="p-4 font-semibold">Agama</td><td class="p-4">-</td></tr>
-                            <tr class="bg-white"><td class="p-4 font-semibold">Angkatan</td><td class="p-4">D3 Teknik Informatika</td></tr>
-                            <tr class="bg-gray-100"><td class="p-4 font-semibold">Program Studi</td><td class="p-4">Komputer dan Bisnis</td></tr>
-                            <tr class="bg-white"><td class="p-4 font-semibold">Jurusan</td><td class="p-4">4</td></tr>
-                            <tr class="bg-gray-100"><td class="p-4 font-semibold">Semester</td><td class="p-4">2023/2024</td></tr>
+                            <tr class="bg-white"><td class="p-4 font-semibold">Tahun Akademik</td><td class="p-4">2023/2024</td></tr>
+                            <tr class="bg-gray-100"><td class="p-4 font-semibold">Program Studi</td><td class="p-4">D3 Teknik Informatika</td></tr>
+                            <tr class="bg-white"><td class="p-4 font-semibold">Jurusan</td><td class="p-4">Komputer dan Bisnis</td></tr>
+                            <tr class="bg-gray-100"><td class="p-4 font-semibold">Semester</td><td class="p-4">4</td></tr>
                             <tr class="bg-white "><td class="p-4 font-semibold">Alamat</td><td class="p-4">-</td></tr>
                             <tr class="bg-gray-100"><td class="p-4 font-semibold">Email</td><td class="p-4">-</td></tr>
                             <tr class="bg-white"><td class="p-4 font-semibold">No Handphone</td><td class="p-4">-</td></tr>

@@ -1,5 +1,5 @@
 @props(['username', 'nim'])
-<div>
+<div class="sticky top-0">
     <!-- Navbar -->
     <nav class="bg-blue-600 text-white p-4 flex justify-between items-center">
         <div class="text-lg font-bold">SIP - Cuti</div>
@@ -8,8 +8,6 @@
             <span>{{ $username }}</span>
             <div><i class="ri-notification-3-fill pr-5 pl-3"></i></div>
         </div>
-        
-        
     </nav>
     
     <div class="flex">
