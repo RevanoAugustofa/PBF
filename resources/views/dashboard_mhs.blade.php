@@ -10,6 +10,7 @@
 </head>
 <body class="bg-gray-100">
     <x-layout username="Revano Augustofa" nim="2301022071">
+        
         <div class="flex-1 p-6">
             <div class="mt-4">
                 <p class="text-gray-600">> Data Mahasiswa</p>
@@ -32,7 +33,6 @@
                     </div>
     
                     <!-- Data Mahasiswa -->
-                    
                     <div class=" w-full bg-gray-50 p-4 rounded">
                     <h3 class="font-bold">Data Mahasiswa</h3>
                     <table class="w-full mt-2 border border-collapse table-auto">

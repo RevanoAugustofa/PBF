@@ -13,8 +13,10 @@
     <x-layout username="Revano Augustofa" nim="2301022071">
         <!-- Main Content -->
         <main class="flex-1 p-6">
-            <p class="text-sm text-gray-500">> Pengajuan Cuti > Form Cuti Mahasiswa</p>
-            <h2 class="text-2xl font-bold mt-2">Mahasiswa <span class="text-gray-500">Riwayat berhenti studi mahasiswa.</span></h2>
+            <div class="mt-4">
+                <p class="text-gray-600">> Pengajuan Cuti > Form Cuti Mahasiswa</p>
+                <h2 class="text-2xl font-bold ">Mahasiswa <span class="text-gray-600 text-sm">Riwayat berhenti studi mahasiswa.</span></h2>
+            </div>
             
             <div class="bg-white shadow-md rounded p-4 mt-4">
                 <!-- Tab Menu -->
