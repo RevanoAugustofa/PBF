@@ -29,13 +29,15 @@
                 </div>
                 
                 <!-- Data Mahasiswa -->
-                <div class="grid grid-cols-2 bg-blue-50 p-4 mt-3 rounded">
-                    <p><strong>NPM:</strong> 230102071</p>
-                    <p><strong>Jurusan:</strong> Komputer dan Bisnis</p>
-                    <p><strong>Nama:</strong> Revano Augustofa</p>
-                    <p><strong>Semester:</strong> 4</p>
-                    <p><strong>Program Studi:</strong> D3 Teknik Informatika</p>
-                    <p><strong>Angkatan:</strong> 2023/2024</p>
+                <div class="mt-4 p-4 bg-blue-100 rounded">
+                    <div class="grid grid-cols-2 gap-4">
+                        <p><strong>NPM:</strong> 230102071</p>
+                        <p><strong>Jurusan:</strong> Komputer dan Bisnis</p>
+                        <p><strong>Nama:</strong> Revano Augustofa</p>
+                        <p><strong>Semester:</strong> 4</p>
+                        <p><strong>Program Studi:</strong> D3 Teknik Informatika</p>
+                        <p><strong>Angkatan:</strong> 2023/2024</p>
+                    </div>
                 </div>
             </div>
 
@@ -67,7 +69,7 @@
         
             <!-- Action Buttons -->
             <div class="flex justify-end mt-4 space-x-2">
-                <button class="px-4 py-2 bg-gray-300 text-gray-700 rounded">⬅ Kembali</button>
+                <a href="pengajuanCuti"><button class="px-4 py-2 bg-gray-300 text-gray-700 rounded">⬅ Kembali</button></a>
                 <button class="px-4 py-2 bg-green-500 text-white rounded">✔ Simpan</button>
             </div>
         </main>

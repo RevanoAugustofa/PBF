@@ -1,58 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
-</head>
-<body>
-    <x-layout username="Revano Augustofa" nim="2301022071">
-        <div class="flex-1 p-6">
-            <div class="mt-4">
-                <p class="text-gray-600">> Pengajuan Cuti</p>
-                <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Riwayat berhenti studi mahasiswa.</span></h2>
-            </div>
-
-            <div class="bg-white p-4 rounded shadow mt-4">
-                <div class="flex justify-between items-center border-b pb-2">
-                    <div class="flex space-x-4">
-                       <a href="dashboard_mhs"><button class="px-4 py-2 text-gray-600 ">Data Mahasiswa</button></a> 
-                        <button class="px-4 py-2  border-blue-500 font-semibold">Pengajuan Cuti</button>
-                    </div>
-                    <button class="bg-green-500 text-white px-4 py-2 rounded flex items-center">+ Tambah</button>
-                </div>
-                
-                <div class="flex flex-col md:flex-row pt-4">
-                    <!-- Foto -->
-                    <div class="bg-gray-200 h-48 w-48 flex items-center justify-center mr-6 mb-4 md:mb-0">
-                        <span>Foto</span>
-                    </div>
-    
-                    <!-- Data Mahasiswa -->
-                    <div class="bg-blue-100 p-4 rounded flex-1">
-                        <h3 class="font-bold">Data Mahasiswa</h3>
-                        <dl class="mt-2">
-                            <div class="flex justify-between"><dt>Nomor Induk Kependudukan:</dt><dd>230102071</dd></div>
-                            <div class="flex justify-between"><dt>NPM:</dt><dd>230102071</dd></div>
-                            <div class="flex justify-between"><dt>Nama:</dt><dd>Revano Augustofa</dd></div>
-                            <div class="flex justify-between"><dt>Tempat/ Tgl lahir:</dt><dd>-</dd></div>
-                            <div class="flex justify-between"><dt>Jenis Kelamin:</dt><dd>-</dd></div>
-                            <div class="flex justify-between"><dt>Agama:</dt><dd>-</dd></div>
-                            <div class="flex justify-between"><dt>Angkatan:</dt><dd>D3 Teknik Informatika</dd></div>
-                            <div class="flex justify-between"><dt>Program Studi:</dt><dd>Komputer dan Bisnis</dd></div>
-                            <div class="flex justify-between"><dt>Jurusan:</dt><dd>4</dd></div>
-                            <div class="flex justify-between"><dt>Semester:</dt><dd>2023/2024</dd></div>
-                            <div class="flex justify-between"><dt>Alamat:</dt><dd>-</dd></div>
-                            <div class="flex justify-between"><dt>Email:</dt><dd>-</dd></div>
-                            <div class="flex justify-between"><dt>No Handphone:</dt><dd>-</dd></div>
-                        </dl>
-                    </div>
-                </div>
-            </div>
+@props(['username', 'nim'])
+<div class="sticky top-0">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white p-4 flex justify-between items-center">
+        <div class="text-lg font-bold">SIP - Cuti</div>
+        <div class="flex items-center">
+            <div class="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
+            <span>{{ $username }}</span>
+            <div><i class="ri-notification-3-fill pr-5 pl-3"></i></div>
         </div>
-</x-layout>
-</body>
-
-</html>
+    </nav>
+    
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-1/4 bg-white text-white p-5 min-h-screen">
+            <div class="flex items-center mb-8 text-black">
+                <div class="w-12 h-12 rounded-full bg-gray-300 mr-3"></div>
+                <div>
+                    <h2 class="font-bold">{{ $username }}</h2>
+                    <p class="text-sm bg-gray-300 rounded px-2 inline-block">{{ $nim }}</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#" class="block py-2 px-4 bg-blue-500 rounded">Dashboard</a>
+                <a href="#" class="block py-2 px-4 hover:bg-gray-300 text-black rounded mt-2">Logout</a>
+            </nav>
+        </div>
+        <div class="p-5 w-full"> <!-- Konten utama -->
+            {{ $slot }}
+        </div>
+    </div>
+</div>
