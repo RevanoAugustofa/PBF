@@ -36,18 +36,20 @@
                         <p><strong>Nama:</strong> Revano Augustofa</p>
                         <p><strong>Semester:</strong> 4</p>
                         <p><strong>Program Studi:</strong> D3 Teknik Informatika</p>
-                        <p><strong>Angkatan:</strong> 2023/2024</p>
+                        <p><strong>Tahun Akademik:</strong> 2023/2024</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Form Cuti -->
+            <!-- Form Cuti Mahasiswa -->
             <div class="bg-white shadow-md rounded p-6 mt-4 border border-red-400">
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-gray-700 font-semibold">Periode*</label>
+                        <label class="block text-gray-700 font-semibold">Tahun Akademik*</label>
                         <select class="border p-2 w-full rounded">
-                            <option>20232</option>
+                            <option>2024/2025</option>
+                            <option>2023/2024</option>
+                            <option>2022/2023</option>
                         </select>
                     </div>
                     <div>
@@ -57,7 +59,8 @@
                     <div>
                         <label class="block text-gray-700 font-semibold">Status Studi Yang Diajukan</label>
                         <select class="border p-2 w-full rounded">
-                            <option>Cuti</option>
+                            <option value="Cuti">Cuti</option>
+                            <option value="Keluar">Keluar</option>
                         </select>
                     </div>
                     <div class="col-span-2">

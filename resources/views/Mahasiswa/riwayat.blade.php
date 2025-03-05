@@ -35,7 +35,7 @@
                 <p><strong>Nama:</strong> Revano Augustofa</p>
                 <p><strong>Semester:</strong> 4</p>
                 <p><strong>Program Studi:</strong> D3 Teknik Informatika</p>
-                <p><strong>Angkatan:</strong> 2023/2024</p>
+                <p><strong>Tahun Akademik:</strong> 2023/2024</p>
             </div>
         </div>
         <!-- Timeline -->

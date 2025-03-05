@@ -36,7 +36,7 @@
                         <p><strong>Nama:</strong> Revano Augustofa</p>
                         <p><strong>Semester:</strong> 4</p>
                         <p><strong>Program Studi:</strong> D3 Teknik Informatika</p>
-                        <p><strong>Angkatan:</strong> 2023/2024</p>
+                        <p><strong>Tahun Akademik:</strong> 2023/2024</p>
                     </div>
                 </div>
                 
@@ -45,7 +45,7 @@
                         <thead>
                             <tr class="bg-blue-600 text-white">
                                 <th class="border px-4 py-2">No</th>
-                                <th class="border px-4 py-2">Periode</th>
+                                <th class="border px-4 py-2">Tahun Akademik</th>
                                 <th class="border px-4 py-2">Status Yang Diajukan</th>
                                 <th class="border px-4 py-2">Status Akademik</th>
                                 <th class="border px-4 py-2">Tgl Pengajuan</th>

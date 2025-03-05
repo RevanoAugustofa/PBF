@@ -3,7 +3,7 @@
   <!-- Sidebar: Full tinggi layar tanpa terputus -->
   <aside class="w-64 bg-white border-r border-gray-300 h-screen flex flex-col">
     <!-- Header Sidebar -->
-    <div class="text-lg font-bold text-center py-5 bg-blue-500 text-white">
+    <div class="text-lg font-bold text-center py-5 bg-blue-600 text-white">
       SIP - Cuti
     </div>
     <!-- Profil -->
@@ -24,7 +24,7 @@
   <!-- Main Content: Navbar tetap di atas & konten bisa discroll -->
   <div class="flex-1 flex flex-col">
     <!-- Navbar tetap di atas -->
-    <nav class="bg-blue-600 text-white p-4 flex justify-between items-center sticky top-0 z-10">
+    <nav class="bg-blue-600 text-white p-4 flex justify-end items-center sticky top-0 z-10">
       <div class="flex items-center">
         <div class="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
         <span>{{ $username }}</span>
