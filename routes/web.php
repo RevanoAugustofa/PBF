@@ -25,3 +25,7 @@ Route::get('/riwayat', function () {
 Route::get('/formCuti', function () {
     return view('formCuti');
 });
+
+Route::get('/Admin/dashboard_adm', function () {
+    return view('Admin/dashboard_adm');
+});
