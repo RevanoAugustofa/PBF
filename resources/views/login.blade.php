@@ -27,11 +27,27 @@
                        placeholder="Masukkan password" required>
             </div>
             <div class="mb-4">
-                <label class="block text-gray-700">Level*</label>
+                <label class="block text-gray-700">Login Sebagai*</label>
+                <select id="level" name="level" 
+                        class="w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:ring focus:ring-blue-200" 
+                        required>
+                    <option value="" disabled selected>Pilih peran</option>
+                    <option value="admin">Admin</option>
+                    <option value="mahasiswa">Mahasiswa</option>
+                    <option value="baup">BAUP</option>
+                    <option value="dosen">Dosen</option>
+                    <option value="kajur">Kajur</option>
+                    <option value="perpus">Perpus</option>
+                </select>
+            </div>
+            
+
+            {{-- <div class="mb-4">
+                <label class="block text-gray-700">Login Sebagai*</label>
                 <input type="text" id="level" name="level" 
                        class="w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:ring focus:ring-blue-200" 
                        placeholder="Misal: admin/mahasiswa/baup/dosen/kajur/perpus" required>
-            </div>
+            </div> --}}
             
             <!-- Tombol Submit -->
             <button type="submit" 
