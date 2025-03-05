@@ -21,3 +21,7 @@ Route::get('/dashboard_mhs', function () {
 Route::get('/riwayat', function () {
     return view('riwayat');
 });
+
+Route::get('/formCuti', function () {
+    return view('formCuti');
+});
