@@ -18,9 +18,12 @@
             
             <div class="bg-white shadow-md rounded p-4 mt-4">
                 <!-- Tab Menu -->
-                <div class="border-b flex space-x-4">
-                    <a href="#" class="pb-2 border-b-2 border-cyan-700 font-semibold">Data Mahasiswa</a>
-                    <a href="#" class="pb-2 text-gray-500">Pengajuan Cuti</a>
+                <div class="flex justify-between items-center border-b pb-2">
+                    <div class="flex space-x-4">
+                       <a href="dashboard_mhs"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Data Mahasiswa</button></a> 
+                       <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Pengajuan Cuti</button>
+                       <a href="riwayat"><button class="px-4 py-2  text-gray-600 hover:bg-gray-100 rounded  ">Timeline Pengajuan</button></a>
+                    </div>
                 </div>
                 
                 <!-- Data Mahasiswa -->

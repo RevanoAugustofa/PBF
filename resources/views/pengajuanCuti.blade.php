@@ -26,7 +26,7 @@
                         <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Pengajuan Cuti</button>
                         <a href="riwayat"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Timeline Pengajuan</button></a>
                     </div>
-                    <button class="bg-green-500 text-white px-4 py-2 rounded flex items-center">+ Tambah</button>
+                    <a href="formCuti"><button class="bg-green-500 text-white px-4 py-2 rounded flex items-center">+ Tambah</button></a>
                 </div>
                 
                 <div class="mt-4 p-4 bg-blue-100 rounded">
