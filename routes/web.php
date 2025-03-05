@@ -17,3 +17,7 @@ Route::get('/pengajuanCuti', function () {
 Route::get('/dashboard_mhs', function () {
     return view('dashboard_mhs');
 });
+
+Route::get('/riwayat', function () {
+    return view('riwayat');
+});

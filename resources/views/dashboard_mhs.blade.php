@@ -21,6 +21,7 @@
                     <div class="flex space-x-4">
                        <button class="px-4 py-2 border-blue-500 border-b-4 font-semibold">Data Mahasiswa</button> 
                        <a href="pengajuanCuti"><button class="px-4 py-2 text-gray-600  hover:bg-gray-100 rounded ">Pengajuan Cuti</button></a>
+                       <a href="riwayat"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Timeline Pengajuan</button></a>
                     </div>
                 </div>
                 
