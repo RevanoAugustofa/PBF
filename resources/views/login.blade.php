@@ -51,11 +51,11 @@
         // Rute yang dipetakan berdasarkan level user
         const routesByLevel = {
             admin: '/Admin/dashboard_adm',
-            mahasiswa: '/mahasiswa/dashboard',
-            baup: '/baup/dashboard',
-            dosen: '/dosen/dashboard',
-            kajur: '/kajur/dashboard',
-            perpus: '/perpus/dashboard'
+            mahasiswa: '/Mahasiswa/dashboard_mhs',
+            baup: '/Baup/dashboard_baup',
+            dosen: '/Dosen/dashboard_dsn',
+            kajur: '/Kajur/dashboard_kjur',
+            perpus: '/Perpus/dashboard_prs'
         };
 
         loginForm.addEventListener('submit', async (e) => {

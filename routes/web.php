@@ -10,20 +10,20 @@ Route::get('/coba', function () {
     return view('coba');
 });
 
-Route::get('/pengajuanCuti', function () {
-    return view('pengajuanCuti');
+Route::get('/Mahasiswa/pengajuanCuti', function () {
+    return view('Mahasiswa/pengajuanCuti');
 });
 
-Route::get('/dashboard_mhs', function () {
-    return view('dashboard_mhs');
+Route::get('/Mahasiswa/dashboard_mhs', function () {
+    return view('Mahasiswa/dashboard_mhs');
 });
 
-Route::get('/riwayat', function () {
-    return view('riwayat');
+Route::get('/Mahasiswa/riwayat', function () {
+    return view('Mahasiswa/riwayat');
 });
 
-Route::get('/formCuti', function () {
-    return view('formCuti');
+Route::get('/Mahasiswa/formCuti', function () {
+    return view('Mahasiswa/formCuti');
 });
 
 Route::get('/Admin/dashboard_adm', function () {
