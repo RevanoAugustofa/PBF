@@ -1,4 +1,4 @@
-@props(['nama_mahasiswa', 'npm'])
+@props(['mahasiswa', 'npm'])
 <div class="flex h-screen">
   <!-- Sidebar: Full tinggi layar tanpa terputus -->
   <aside class="w-64 bg-white border-r border-gray-300 h-screen flex flex-col">

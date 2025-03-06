@@ -10,7 +10,40 @@
     <title>Document</title>
     
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+        try {
+            // Ambil data user yang sedang login dari API
+            const username = localStorage.getItem('username');
+            console.log("Username dari localStorage:", username);
+            if (!username) {
+                alert("Silakan login terlebih dahulu.");
+                window.location.href = "/";
+                return;
+            }
 
+            // Ambil data mahasiswa berdasarkan username dari user
+            const mahasiswaResponse = await fetch(`http://localhost:8080/mahasiswa/showName/${username}`);
+            if (!mahasiswaResponse.ok) throw new Error("Gagal mengambil data mahasiswa");
+            const mahasiswa = await mahasiswaResponse.json();
+            console.log("Data dari API:", mahasiswa);
+            // Masukkan data ke dalam tabel
+            if (mahasiswa.data && mahasiswa.data.length > 0) {
+                const mahasiswaData = mahasiswa.data[0]; // Ambil objek pertama dari array
+                document.getElementById("npm").textContent = mahasiswaData.npm || "-";
+                document.getElementById("nama").textContent = mahasiswaData.nama_mahasiswa || "-";
+                document.getElementById("prodi").textContent = mahasiswaData.program_studi || "-";
+                document.getElementById("jurusan").innerHTML = mahasiswaData.jurusan || "-";
+            } else {
+                alert("Tidak ada data mahasiswa untuk username ini.");
+                console.log("Data array kosong atau tidak ada:", mahasiswa.data);
+            }
+        } catch (error) {
+            console.error("Terjadi kesalahan:", error);
+            alert("Gagal mengambil data.");
+        }
+    });
+</script>
 <body class="bg-gray-100">
     <x-layout username="Revano Augustofa" nim="2301022071">
         <!-- Main Content -->
@@ -32,13 +65,11 @@
                 
                 <!-- Data Mahasiswa -->
                 <div class="mt-4 p-4 bg-blue-100 rounded">
-                    <div class="grid grid-cols-2 gap-4">
-                        <p><strong>NPM:</strong> 230102071</p>
-                        <p><strong>Jurusan:</strong> Komputer dan Bisnis</p>
-                        <p><strong>Nama:</strong> Revano Augustofa</p>
-                        <p><strong>Semester:</strong> 4</p>
-                        <p><strong>Program Studi:</strong> D3 Teknik Informatika</p>
-                        <p><strong>Tahun Akademik:</strong> 2023/2024</p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-2">
+                        <p><strong>Nama : </strong> <span id="nama"></span></p>
+                        <p><strong>Jurusan : </strong><span id="jurusan"></span></p>
+                        <p><strong>NPM : </strong><span id="npm"></span></p>
+                        <p><strong>Program Studi : </strong><span id="prodi"></span></p>
                     </div>
                 </div>
             </div>
@@ -47,24 +78,20 @@
             <div class="bg-white shadow-md rounded p-6 mt-4 border border-red-400">
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-gray-700 font-semibold">Tahun Akademik*</label>
-                        <select class="border p-2 w-full rounded">
-                            <option>2024/2025</option>
-                            <option>2023/2024</option>
-                            <option>2022/2023</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold">Dokumen Pendukung</label>
-                        <input type="file" class="border p-2 w-full rounded">
-                    </div>
-                    <div>
                         <label class="block text-gray-700 font-semibold">Status Studi Yang Diajukan</label>
                         <select class="border p-2 w-full rounded">
                             <option value="Cuti">Cuti</option>
                             <option value="Keluar">Keluar</option>
                         </select>
                     </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold">Dokumen Pendukung</label>
+                        <input type="text" class="border p-2 w-full rounded">
+                    </div>
+                    {{-- <div>
+                        <label class="block text-gray-700 font-semibold">Dokumen Pendukung</label>
+                        <input type="file" class="border p-2 w-full rounded">
+                    </div> --}}
                     <div class="col-span-2">
                         <label class="block text-gray-700 font-semibold">Alasan Berhenti*</label>
                         <textarea class="border p-2 w-full rounded"></textarea>

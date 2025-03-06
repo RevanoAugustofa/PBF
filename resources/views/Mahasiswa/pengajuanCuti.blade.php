@@ -30,6 +30,7 @@
                     document.getElementById("npm").textContent = mahasiswaData.npm || "-";
                     document.getElementById("nama").textContent = mahasiswaData.nama_mahasiswa || "-";
                     document.getElementById("prodi").textContent = mahasiswaData.program_studi || "-";
+                    document.getElementById("jurusan").innerHTML = mahasiswaData.jurusan || "-";
                 } else {
                     alert("Tidak ada data mahasiswa untuk username ini.");
                     console.log("Data array kosong atau tidak ada:", mahasiswa.data);
@@ -63,9 +64,10 @@
                   <!-- Data Mahasiswa -->
                   <div class="mt-4 p-4 bg-blue-100 rounded">
                     <div class="grid grid-cols-2 gap-x-8 gap-y-2">
-                        <p><strong>Nama</strong> <span id="nama"></span></p>
-                        <p><strong>Program Studi</strong><span id="prodi"></span></p>
-                        <p><strong>NPM</strong><span id="npm"></span></p>
+                        <p><strong>Nama : </strong> <span id="nama"></span></p>
+                        <p><strong>Jurusan : </strong><span id="jurusan"></span></p>
+                        <p><strong>NPM : </strong><span id="npm"></span></p>
+                        <p><strong>Program Studi : </strong><span id="prodi"></span></p>
                     </div>
                 </div>
                 
