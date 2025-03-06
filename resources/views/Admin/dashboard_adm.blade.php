@@ -66,7 +66,7 @@
 
       <!-- Tabel / Data Mahasiswa -->
       <div class="mt-4 bg-gray-100 border border-gray-300 rounded h-64 flex items-center justify-center text-gray-500 text-sm">
-        POKOKNYA DATA SEMUA MAHASISWA
+       
       </div>
     </div>
     </main>
