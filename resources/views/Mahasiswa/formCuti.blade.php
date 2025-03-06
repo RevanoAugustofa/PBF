@@ -8,7 +8,9 @@
     rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Document</title>
+    
 </head>
+
 <body class="bg-gray-100">
     <x-layout username="Revano Augustofa" nim="2301022071">
         <!-- Main Content -->
