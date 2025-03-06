@@ -10,7 +10,7 @@
 <body class="flex items-center justify-center h-screen bg-gray-100">
     <div class="bg-white p-6 rounded-lg shadow-lg w-96">
         <h2 class="text-2xl font-bold text-center text-blue-600">Login</h2>
-        
+
         <!-- Form Login -->
         <form id="loginForm" class="mt-4">
             <div class="mb-4">
@@ -39,27 +39,25 @@
                     <option value="perpus">Perpus</option>
                 </select>
             </div>
-            
-            <!-- Tombol Submit -->
-            <button type="submit" 
-                    class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
-                Login
-            </button>
-        </form>
+  <!-- Tombol Submit -->
+  <button type="submit" 
+  class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+Login
+</button>
+</form>
+  <!-- Notifikasi Pop-up -->
+  <div id="popupNotification" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded shadow-lg opacity-0 transition-all duration-500">
+    <span id="popupMessage"></span>
+</div>
+</div>  
 
-        <!-- Notifikasi Pop-up -->
-        <div id="popupNotification" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded shadow-lg opacity-0 transition-all duration-500">
-            <span id="popupMessage"></span>
-        </div>
-    </div>  
-
-    <script>
-    const loginForm = document.getElementById('loginForm');
+<script>
+     const loginForm = document.getElementById('loginForm');
     const popupNotification = document.getElementById('popupNotification');
     const popupMessage = document.getElementById('popupMessage');
 
-    // Rute yang dipetakan berdasarkan level user
-    const routesByLevel = {
+ // Rute yang dipetakan berdasarkan level user
+ const routesByLevel = {
         admin: 'http://127.0.0.1:8000/Admin/dashboard_adm',
         mahasiswa: 'http://127.0.0.1:8000/Mahasiswa/dashboard_mhs',
         baup: 'http://127.0.0.1:8000/Baup/dashboard_baup',
@@ -82,11 +80,9 @@
             if (!response.ok) {
                 throw new Error('Gagal mengambil data user');
             }
-            
-            // Asumsikan response JSON berbentuk array of objects
-            const users = await response.json();
-            
-            // Cari user yang cocok
+              // Asumsikan response JSON berbentuk array of objects
+              const users = await response.json();
+               // Cari user yang cocok
             const foundUser = users.find(u => 
                 u.username === username &&
                 u.password === password &&
@@ -97,9 +93,8 @@
                 // Simpan data ke localStorage
                 localStorage.setItem('username', username);
                 // localStorage.setItem('level', level);
-
-                // Jika level user terdaftar di routesByLevel, arahkan ke URL yang sesuai
-                if (routesByLevel[level]) {
+                 // Jika level user terdaftar di routesByLevel, arahkan ke URL yang sesuai
+                 if (routesByLevel[level]) {
                     window.location.href = routesByLevel[level];
                 } else {
                     showPopup('Level tidak dikenal!');
@@ -107,25 +102,20 @@
             } else {
                 // User tidak ditemukan
                 showPopup('Username / Password / Level salah!');
-            }
-        } 
-        catch (error) {
+            } } catch (error) {
             console.error(error);
             showPopup('Terjadi kesalahan pada server.');
         }
     });
 
-    let popupTimeout;
-
-function showPopup(message) {
-    clearTimeout(popupTimeout);
-    popupMessage.textContent = message;
-    popupNotification.style.opacity = '1';
-    popupTimeout = setTimeout(() => {
-        popupNotification.style.opacity = '0';
-    }, 3000);
-}
- 
+    // Fungsi untuk menampilkan popup
+    function showPopup(message) {
+        popupMessage.textContent = message;
+        popupNotification.style.opacity = '1';
+        setTimeout(() => {
+            popupNotification.style.opacity = '0';
+        }, 3000);
+    }
     </script>
 </body>
 </html>
