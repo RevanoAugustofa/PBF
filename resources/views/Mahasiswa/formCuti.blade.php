@@ -72,7 +72,7 @@
         
             <!-- Action Buttons -->
             <div class="flex justify-end mt-4 space-x-2">
-                <a href="pengajuanCuti"><button class="px-4 py-2 bg-gray-300 text-gray-700 rounded">⬅ Kembali</button></a>
+                <a href="pengajuanCuti"><button class="px-4 py-2 bg-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white rounded">⬅ Kembali</button></a>
                 <button class="px-4 py-2 bg-green-500 text-white rounded">✔ Simpan</button>
             </div>
         </main>

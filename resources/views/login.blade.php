@@ -13,7 +13,6 @@
         
         <!-- Form Login -->
         <form id="loginForm" class="mt-4">
-            @csrf
             <div class="mb-4">
                 <label class="block text-gray-700">Username*</label>
                 <input type="text" id="username" name="username" 
@@ -41,84 +40,88 @@
                 </select>
             </div>
             
-
-            {{-- <div class="mb-4">
-                <label class="block text-gray-700">Login Sebagai*</label>
-                <input type="text" id="level" name="level" 
-                       class="w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:ring focus:ring-blue-200" 
-                       placeholder="Misal: admin/mahasiswa/baup/dosen/kajur/perpus" required>
-            </div> --}}
-            
             <!-- Tombol Submit -->
             <button type="submit" 
                     class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
                 Login
             </button>
         </form>
-        
-        <!-- Pesan Error -->
-        <p id="errorMessage" class="text-red-500 text-sm mt-2 hidden"></p>
+
+        <!-- Notifikasi Pop-up -->
+        <div id="popupNotification" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded shadow-lg opacity-0 transition-all duration-500">
+            <span id="popupMessage"></span>
+        </div>
     </div>  
 
     <script>
-        const loginForm = document.getElementById('loginForm');
-        const errorMessage = document.getElementById('errorMessage');
+    const loginForm = document.getElementById('loginForm');
+    const popupNotification = document.getElementById('popupNotification');
+    const popupMessage = document.getElementById('popupMessage');
+
+    // Rute yang dipetakan berdasarkan level user
+    const routesByLevel = {
+        admin: 'http://127.0.0.1:8000/Admin/dashboard_adm',
+        mahasiswa: 'http://127.0.0.1:8000/Mahasiswa/dashboard_mhs',
+        baup: 'http://127.0.0.1:8000/Baup/dashboard_baup',
+        dosen: 'http://127.0.0.1:8000/Dosen/dashboard_dsn',
+        kajur: 'http://127.0.0.1:8000/Kajur/dashboard_kjur',
+        perpus: 'http://127.0.0.1:8000/Perpus/dashboard_prs'
+    };
+
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        // Rute yang dipetakan berdasarkan level user
-        const routesByLevel = {
-            admin: '/Admin/dashboard_adm',
-            mahasiswa: '/Mahasiswa/dashboard_mhs',
-            baup: '/Baup/dashboard_baup',
-            dosen: '/Dosen/dashboard_dsn',
-            kajur: '/Kajur/dashboard_kjur',
-            perpus: '/Perpus/dashboard_prs'
-        };
-
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            errorMessage.classList.add('hidden');
-            
-            // Ambil nilai dari input
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-            const level    = document.getElementById('level').value.trim();
-            
-            try {
-                // Fetch data user dari endpoint
-                const response = await fetch('http://localhost:8080/user');
-                if (!response.ok) {
-                    throw new Error('Gagal mengambil data user');
-                }
-                
-                // Asumsikan response JSON berbentuk array of objects
-                const users = await response.json();
-                
-                // Cari user yang cocok
-                const foundUser = users.find(u => 
-                    u.username === username &&
-                    u.password === password &&
-                    u.level === level
-                );
-
-                if (foundUser) {
-                    // Jika level user terdaftar di routesByLevel, arahkan ke URL yang sesuai
-                    if (routesByLevel[level]) {
-                        window.location.href = routesByLevel[level];
-                    } else {
-                        errorMessage.textContent = 'Level tidak dikenal!';
-                        errorMessage.classList.remove('hidden');
-                    }
-                } else {
-                    // User tidak ditemukan
-                    errorMessage.textContent = 'Username / Password / Level salah!';
-                    errorMessage.classList.remove('hidden');
-                }
-            } catch (error) {
-                console.error(error);
-                errorMessage.textContent = 'Terjadi kesalahan pada server.';
-                errorMessage.classList.remove('hidden');
+        // Ambil nilai dari input
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const level = document.getElementById('level').value.trim();
+        
+        try {
+            // Fetch data user dari endpoint
+            const response = await fetch('http://localhost:8080/user');
+            if (!response.ok) {
+                throw new Error('Gagal mengambil data user');
             }
-        });
+            
+            // Asumsikan response JSON berbentuk array of objects
+            const users = await response.json();
+            
+            // Cari user yang cocok
+            const foundUser = users.find(u => 
+                u.username === username &&
+                u.password === password &&
+                u.level === level
+            );
+
+            if (foundUser) {
+                // Simpan data ke localStorage
+                localStorage.setItem('username', username);
+                // localStorage.setItem('level', level);
+
+                // Jika level user terdaftar di routesByLevel, arahkan ke URL yang sesuai
+                if (routesByLevel[level]) {
+                    window.location.href = routesByLevel[level];
+                } else {
+                    showPopup('Level tidak dikenal!');
+                }
+            } else {
+                // User tidak ditemukan
+                showPopup('Username / Password / Level salah!');
+            }
+        } catch (error) {
+            console.error(error);
+            showPopup('Terjadi kesalahan pada server.');
+        }
+    });
+
+    // Fungsi untuk menampilkan popup
+    function showPopup(message) {
+        popupMessage.textContent = message;
+        popupNotification.style.opacity = '1';
+        setTimeout(() => {
+            popupNotification.style.opacity = '0';
+        }, 3000);
+    }
     </script>
 </body>
 </html>
