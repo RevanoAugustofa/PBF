@@ -44,6 +44,7 @@ php artisan migrate
 php artisan serve
 ```
 Secara default, aplikasi dapat diakses melalui http://127.0.0.1:8000.
+
 2. Akses Aplikasi Buka browser dan akses URL di atas.
 
 ## Troubleshooting

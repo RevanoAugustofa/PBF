@@ -17,9 +17,14 @@
           </div>
         </div>
         <!-- Navigasi Sidebar -->
-        <nav class="px-4">
-          <a href="#" class="block py-2 px-4 bg-blue-500 rounded text-white">Dashboard</a>
-          <a href="/" class="block py-2 px-4 mt-2 hover:bg-gray-200 rounded text-black">Logout</a>
+        <nav class="flex flex-col space-y-2 p-4">
+          <a href="dashboard_adm" class=" py-2 px-4 bg-blue-500 rounded text-white">Dashboard</a>
+          <a href="data_mhs" class=" py-2 px-4 bg-blue-500 rounded text-white">Mahasiswa</a>
+          <a href="data_dsn_wali" class=" py-2 px-4 bg-blue-500 rounded text-white">Dosen Wali</a>
+          <a href="data_perpus" class=" py-2 px-4 bg-blue-500 rounded text-white">Perpus</a>
+          <a href="data_jurusan" class=" py-2 px-4 bg-blue-500 rounded text-white">Jurusan</a>
+          <a href="data_baup" class=" py-2 px-4 bg-blue-500 rounded text-white">Baup</a>
+          <a href="/" class=" py-2 px-4 mt-2 hover:bg-gray-200 rounded text-black">Logout</a>
         </nav>
       </aside>
       

@@ -75,8 +75,13 @@
             </div>
 
             <!-- Form Cuti Mahasiswa -->
+            <form action="pengajuanCuti" method="POST">
             <div class="bg-white shadow-md rounded p-6 mt-4 border border-red-400">
                 <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 font-semibold">NPM</label>
+                        <input type="text" class="border p-2 w-full rounded">
+                    </div>
                     <div>
                         <label class="block text-gray-700 font-semibold">Status Studi Yang Diajukan</label>
                         <select class="border p-2 w-full rounded">
@@ -88,6 +93,10 @@
                         <label class="block text-gray-700 font-semibold">Dokumen Pendukung</label>
                         <input type="text" class="border p-2 w-full rounded">
                     </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold">Tanggal pengajuan</label>
+                        <input type="date">
+                    </div>
                     {{-- <div>
                         <label class="block text-gray-700 font-semibold">Dokumen Pendukung</label>
                         <input type="file" class="border p-2 w-full rounded">
@@ -98,12 +107,14 @@
                     </div>
                 </div>
             </div>
+           
         
             <!-- Action Buttons -->
             <div class="flex justify-end mt-4 space-x-2">
-                <a href="pengajuanCuti"><button class="px-4 py-2 bg-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white rounded">⬅ Kembali</button></a>
-                <button class="px-4 py-2 bg-green-500 text-white rounded">✔ Simpan</button>
+                <a href="pengajuanCuti"><button class="px-4 py-2 bg-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white rounded"><i class="ri-arrow-left-circle-fill"></i> Kembali</button></a>
+                <button class="px-4 py-2 bg-green-500 text-white hover:bg-green-400 rounded"><i class="ri-checkbox-circle-fill"></i> Simpan</button>
             </div>
+        </form>
         </main>
     </x-layout>
 </body>

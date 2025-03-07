@@ -76,12 +76,11 @@
                         <thead>
                             <tr class="bg-blue-600 text-white">
                                 <th class="border px-4 py-2">No</th>
-                                <th class="border px-4 py-2">Tahun Akademik</th>
-                                <th class="border px-4 py-2">Status Yang Diajukan</th>
-                                <th class="border px-4 py-2">Status Akademik</th>
+                                <th class="border px-4 py-2">NPM</th>
+                                <th class="border px-4 py-2">Status</th>
                                 <th class="border px-4 py-2">Tgl Pengajuan</th>
-                                <th class="border px-4 py-2">Status Pengajuan</th>
-                                <th class="border px-4 py-2">Tagihan</th>
+                                <th class="border px-4 py-2">Semester</th>
+                                <th class="border px-4 py-2">Dokumen Pendukung</th>
                                 <th class="border px-4 py-2">Dibatalkan</th>
                                 <th class="border px-4 py-2">Aksi</th>
                             </tr>

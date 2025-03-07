@@ -59,3 +59,22 @@ Route::get('/Mahasiswa/pengajuanCuti', function () {
     return view('Mahasiswa/pengajuanCuti');
 });
 
+Route::get('/Admin/data_mhs', function () {
+    return view('Admin/data_mhs');
+});
+
+Route::get('/Admin/data_dsn_wali', function () {
+    return view('Admin/data_dsn_wali');
+});
+
+Route::get('/Admin/data_jurusan', function () {
+    return view('Admin/data_jurusan');
+});
+
+Route::get('/Admin/data_perpus', function () {
+    return view('Admin/data_perpus');
+});
+
+Route::get('/Admin/data_baup', function () {
+    return view('Admin/data_baup');
+});

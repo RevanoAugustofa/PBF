@@ -31,43 +31,81 @@
 </style>
 <body>
     <x-layout_admin > 
-      <div class="flex-1 p-6">
-        <div class="mt-4">
-            <p class="text-gray-600"><i class="ri-user-fill"></i>> Data Mahasiswa</p>
-            <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Data Studi Mahasiswa.</span></h2>
-        </div>
-        <div class="bg-white p-4 rounded shadow mt-4">
-             <!-- Tab Menu -->
-            <div class="flex justify-between items-center border-b pb-2">
-                <div class="flex space-x-4">
-                    <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Data Mahasiswa</button>
-                   <a href="pengajuanCuti"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Pengajuan Cuti</button></a> 
-                   <a href="riwayat"><button class="px-4 py-2  text-gray-600 hover:bg-gray-100 rounded  ">Timeline Pengajuan</button></a>
-                </div>
-            </div>
-            <div class="pt-6">
-              <table id="myTable" class="display table table-striped" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Umur</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>Ani</td><td>ani@example.com</td><td>25</td></tr>
-                    <tr><td>2</td><td>Budi</td><td>budi@example.com</td><td>30</td></tr>
-                    <tr><td>3</td><td>Citra</td><td>citra@example.com</td><td>28</td></tr>
-                    <tr><td>4</td><td>Dodi</td><td>dodi@example.com</td><td>35</td></tr>
-                    <tr><td>5</td><td>Elsa</td><td>elsa@example.com</td><td>29</td></tr>
-                </tbody>
-            </table>
-            
-                </div>
-            </div>
-        </div>
-    </div>
+      <!-- Main Content -->
+    <main class="flex-1 p-6">
+
+      <!-- Notifikasi -->
+      <div class="bg-green-500 text-white p-3 my-4 rounded">
+          ✅ Berhasil Login sebagai Admin
+      </div>
+
+      <!-- Dashboard -->
+      <div class="bg-white p-4 rounded shadow">
+          <h2 class="text-xl font-bold">Dashboard</h2>
+
+          <!-- Tabs -->
+          <div class="flex space-x-4 border-b mt-2">
+              <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Cuti Mahasiswa</button>
+              <button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Pengajuan Cuti</button>
+              <button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Pengajuan Cuti</button>
+          </div>
+
+          <!-- Table -->
+          <div class="overflow-x-auto mt-4">
+              <table class="w-full border border-collapse">
+                  <thead class="bg-blue-900 text-white">
+                      <tr>
+                          <th class="p-2 border">No</th>
+                          <th class="p-2 border">Periode</th>
+                          <th class="p-2 border">Smt</th>
+                          <th class="p-2 border">Status</th>
+                          <th class="p-2 border">SKS</th>
+                          <th class="p-2 border">IPS</th>
+                          <th class="p-2 border">Total SKS</th>
+                          <th class="p-2 border">IPK</th>
+                          <th class="p-2 border">Keterangan</th>
+                          <th class="p-2 border">Aksi</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr class="bg-gray-100">
+                          <td class="p-2 border">1</td>
+                          <td class="p-2 border">20231</td>
+                          <td class="p-2 border">1</td>
+                          <td class="p-2 border">Aktif</td>
+                          <td class="p-2 border">10</td>
+                          <td class="p-2 border">0.00</td>
+                          <td class="p-2 border">0</td>
+                          <td class="p-2 border">0.00</td>
+                          <td class="p-2 border">Fitri Na'ilah Anwar, S.Kom, M.Kom</td>
+                          <td class="p-2 border flex space-x-2">
+                              <button class="text-blue-500">🔍</button>
+                              <button class="text-green-500">👁</button>
+                              <button class="text-red-500">🗑</button>
+                          </td>
+                      </tr>
+                      <tr class="bg-white">
+                          <td class="p-2 border">2</td>
+                          <td class="p-2 border">20232</td>
+                          <td class="p-2 border">2</td>
+                          <td class="p-2 border text-red-500 font-bold">Cuti</td>
+                          <td class="p-2 border">0</td>
+                          <td class="p-2 border">0.00</td>
+                          <td class="p-2 border">0</td>
+                          <td class="p-2 border">0.00</td>
+                          <td class="p-2 border">Fitri Na'ilah Anwar, S.Kom, M.Kom</td>
+                          <td class="p-2 border flex space-x-2">
+                              <button class="text-blue-500">🔍</button>
+                              <button class="text-green-500">👁</button>
+                              <button class="text-red-500">🗑</button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+
+  </main>
     </x-layout_admin > 
      <script>
         $(document).ready(function () {
