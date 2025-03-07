@@ -6,14 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!-- DataTable CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+<!-- jQuery (Diperlukan oleh DataTable) -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- DataTable JS -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
     <title>Document</title>
 </head>
+<style>
+  /* Custom DataTable agar sesuai dengan Tailwind */
+  table.dataTable thead {
+      @apply bg-gray-800 text-white;
+  }
+  table.dataTable tbody tr:nth-child(even) {
+      @apply bg-gray-100;
+  }
+  table.dataTable tbody tr:hover {
+      @apply bg-gray-200;
+  }
+</style>
 <body>
     <x-layout_admin > 
       <div class="flex-1 p-6">
         <div class="mt-4">
-            <p class="text-gray-600">> Data Mahasiswa</p>
-            <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Riwayat berhenti studi mahasiswa.</span></h2>
+            <p class="text-gray-600"><i class="ri-user-fill"></i>> Data Mahasiswa</p>
+            <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Data Studi Mahasiswa.</span></h2>
         </div>
         <div class="bg-white p-4 rounded shadow mt-4">
              <!-- Tab Menu -->
@@ -24,32 +45,35 @@
                    <a href="riwayat"><button class="px-4 py-2  text-gray-600 hover:bg-gray-100 rounded  ">Timeline Pengajuan</button></a>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row pt-4">
-                <div class="bg-gray-200 h-48 w-48 flex items-center justify-center mr-6 mb-4 md:mb-0">
-                    <span>Foto</span>
-                </div>
-                <div class="w-full bg-gray-50 p-4 rounded">
-                    <h3 class="font-bold">Data Mahasiswa</h3>
-                    <table class="w-full mt-2 border border-collapse table-auto">
-                        <tbody class="divide-y divide-gray-300">
-                            <tr class="bg-gray-100"><td class="p-4 font-semibold w-3/4">NPM</td><td class="p-4 w-2/3" id="npm"></td></tr>
-                            <tr class="bg-white"><td class="p-4 font-semibold">Nama</td><td class="p-4" id="nama">-</td></tr>
-                            <tr class="bg-gray-100"><td class="p-4 font-semibold">Tempat/ Tgl Lahir</td><td class="p-4" id="ttl"></td></tr>
-                            <tr class="bg-white"><td class="p-4 font-semibold">Jenis Kelamin</td><td class="p-4" id="jenis_kelamin"></td></tr>
-                            <tr class="bg-gray-100"><td class="p-4 font-semibold">Agama</td><td class="p-4" id="agama"></td></tr>
-                            <tr class="bg-white"><td class="p-4 font-semibold">Tahun Akademik</td><td class="p-4" id="tahun_akademik"></td></tr>
-                            <tr class="bg-gray-100"><td class="p-4 font-semibold">Program Studi</td><td class="p-4" id="prodi"></td></tr>
-                            <tr class="bg-white"><td class="p-4 font-semibold">Jurusan</td><td class="p-4" id="jurusan"></td></tr>
-                            <tr class="bg-white"><td class="p-4 font-semibold">Alamat</td><td class="p-4" id="alamat"></td></tr>
-                            <tr class="bg-gray-100"><td class="p-4 font-semibold">Email</td><td class="p-4" id="email"></td></tr>
-                            <tr class="bg-white"><td class="p-4 font-semibold">No Handphone</td><td class="p-4" id="no_hp"></td></tr>
-                        </tbody>
-                    </table>
+            <div class="pt-6">
+              <table id="myTable" class="display table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Umur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Ani</td><td>ani@example.com</td><td>25</td></tr>
+                    <tr><td>2</td><td>Budi</td><td>budi@example.com</td><td>30</td></tr>
+                    <tr><td>3</td><td>Citra</td><td>citra@example.com</td><td>28</td></tr>
+                    <tr><td>4</td><td>Dodi</td><td>dodi@example.com</td><td>35</td></tr>
+                    <tr><td>5</td><td>Elsa</td><td>elsa@example.com</td><td>29</td></tr>
+                </tbody>
+            </table>
+            
                 </div>
             </div>
         </div>
     </div>
     </x-layout_admin > 
+     <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable(); // Menginisialisasi DataTable
+        });
+    </script>
 </body>
 </html>
 

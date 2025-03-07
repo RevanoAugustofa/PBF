@@ -47,7 +47,7 @@
     <!-- Content -->
     <div class="flex-1 p-6">
         <div class="mt-4">
-            <p class="text-gray-600">> Timeline Pengajuan</p>
+            <p class="text-gray-600"><i class="ri-user-fill"></i>> Timeline Pengajuan</p>
             <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Riwayat berhenti studi mahasiswa.</span></h2>
         </div>
         

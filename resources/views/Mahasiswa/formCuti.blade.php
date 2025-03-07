@@ -49,8 +49,8 @@
         <!-- Main Content -->
         <main class="flex-1 p-6">
             <div class="mt-4">
-                <p class="text-gray-600">> Pengajuan Cuti > Form Cuti Mahasiswa</p>
-                <h2 class="text-2xl font-bold ">Mahasiswa <span class="text-gray-600 text-sm">Riwayat berhenti studi mahasiswa.</span></h2>
+                <p class="text-gray-600"><i class="ri-user-fill"></i>> Pengajuan Cuti > Form Cuti Mahasiswa</p>
+                <h2 class="text-2xl font-bold ">Mahasiswa <span class="text-gray-600 text-sm">Data Berhenti Studi Mahasiswa.</span></h2>
             </div>
             
             <div class="bg-white shadow-md rounded p-4 mt-4">
