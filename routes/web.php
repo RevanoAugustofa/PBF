@@ -78,3 +78,15 @@ Route::get('/Admin/data_perpus', function () {
 Route::get('/Admin/data_baup', function () {
     return view('Admin/data_baup');
 });
+
+Route::get('/Admin/tambah_data_mhs', function () {
+    return view('Admin/tambah_data_mhs');
+});
+
+Route::get('/Admin/tambah_data_dsn_wali', function () {
+    return view('Admin/tambah_data_dsn_wali');
+});
+
+Route::get('/Admin/Edit/edit_mhs', function () {
+    return view('Admin/Edit/edit_mhs');
+});

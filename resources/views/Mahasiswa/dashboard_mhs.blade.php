@@ -52,17 +52,23 @@
 <body class="bg-gray-100">
     <x-layout > 
         <div class="flex-1 p-6">
+            <div class="bg-white p-4 rounded shadow mt-4 border-t-4 border-blue-400">
             <div class="mt-4">
                 <p class="text-gray-600"><i class="ri-user-fill"></i>> Data Mahasiswa</p>
                 <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Data Studi Mahasiswa.</span></h2>
             </div>
-            <div class="bg-white p-4 rounded shadow mt-4">
+            </div>
+            <div class="bg-white p-4 rounded shadow mt-4 border-t-4 border-gray-400">
                  <!-- Tab Menu -->
                 <div class="flex justify-between items-center border-b pb-2">
                     <div class="flex space-x-4">
                         <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Data Mahasiswa</button>
-                       <a href="pengajuanCuti"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Pengajuan Cuti</button></a> 
-                       <a href="riwayat"><button class="px-4 py-2  text-gray-600 hover:bg-gray-100 rounded  ">Timeline Pengajuan</button></a>
+                        <a href="pengajuanCuti">
+                            <button class="px-4 py-2 text-gray-600 border-b-4 hover:border-blue-400 hover:text-black hover:bg-gray-200 rounded-t">Pengajuan Cuti</button>
+                        </a>                        
+                       <a href="riwayat">
+                        <button class="px-4 py-2 text-gray-600 border-b-4 hover:border-blue-400 hover:text-black hover:bg-gray-200 rounded-t">Timeline Pengajuan</button>
+                        </a>
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row pt-4">

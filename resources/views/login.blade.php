@@ -7,9 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Login</title>
 </head>
-<body class="flex items-center justify-center h-screen bg-gray-100">
+<body class="flex flex-col items-center justify-center h-screen bg-gray-100">
+    
+    <!-- Logo -->
+    <div class="mb-10">
+        <img src="{{ asset('img/cuti1.png') }}" alt="Sip Cuti Logo" class="h-24">
+    </div>
+
     <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 class="text-2xl font-bold text-center text-blue-600">Login</h2>
+        <h2 class="text-xl font-bold text-center text-blue-600">Login</h2>
         
         <!-- Form Login -->
         <form id="loginForm" class="mt-4">
@@ -53,79 +59,82 @@
         </div>
     </div>  
 
+    <!-- Footer -->
+    <footer class="w-full fixed bottom-0 text-center py-4 mt-6 bg-gray-200 text-gray-700">
+        <p>&copy; 2025 Sistem Pengajuan Cuti Mahasiswa. All Rights Reserved.</p>
+    </footer>
+
     <script>
-    const loginForm = document.getElementById('loginForm');
-    const popupNotification = document.getElementById('popupNotification');
-    const popupMessage = document.getElementById('popupMessage');
+        const loginForm = document.getElementById('loginForm');
+        const popupNotification = document.getElementById('popupNotification');
+        const popupMessage = document.getElementById('popupMessage');
 
-    // Rute yang dipetakan berdasarkan level user
-    const routesByLevel = {
-        admin: 'http://127.0.0.1:8000/Admin/dashboard_adm',
-        mahasiswa: 'http://127.0.0.1:8000/Mahasiswa/dashboard_mhs',
-        baup: 'http://127.0.0.1:8000/Baup/dashboard_baup',
-        dosen: 'http://127.0.0.1:8000/Dosen/dashboard_dsn',
-        kajur: 'http://127.0.0.1:8000/Kajur/dashboard_kjur',
-        perpus: 'http://127.0.0.1:8000/Perpus/dashboard_prs'
-    };
+        // Rute yang dipetakan berdasarkan level user
+        const routesByLevel = {
+            admin: 'http://127.0.0.1:8000/Admin/dashboard_adm',
+            mahasiswa: 'http://127.0.0.1:8000/Mahasiswa/dashboard_mhs',
+            baup: 'http://127.0.0.1:8000/Baup/dashboard_baup',
+            dosen: 'http://127.0.0.1:8000/Dosen/dashboard_dsn',
+            kajur: 'http://127.0.0.1:8000/Kajur/dashboard_kjur',
+            perpus: 'http://127.0.0.1:8000/Perpus/dashboard_prs'
+        };
 
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Ambil nilai dari input
-        const username = document.getElementById('username').value.trim();
-        const password = document.getElementById('password').value.trim();
-        const level = document.getElementById('level').value.trim();
-        
-        try {
-            // Fetch data user dari endpoint
-            const response = await fetch('http://localhost:8080/user');
-            if (!response.ok) {
-                throw new Error('Gagal mengambil data user');
-            }
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // Asumsikan response JSON berbentuk array of objects
-            const users = await response.json();
+            // Ambil nilai dari input
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const level = document.getElementById('level').value.trim();
             
-            // Cari user yang cocok
-            const foundUser = users.find(u => 
-                u.username === username &&
-                u.password === password &&
-                u.level === level
-            );
-
-            if (foundUser) {
-                // Simpan data ke localStorage
-                localStorage.setItem('username', username);
-                // localStorage.setItem('level', level);
-
-                // Jika level user terdaftar di routesByLevel, arahkan ke URL yang sesuai
-                if (routesByLevel[level]) {
-                    window.location.href = routesByLevel[level];
-                } else {
-                    showPopup('Level tidak dikenal!');
+            try {
+                // Fetch data user dari endpoint
+                const response = await fetch('http://localhost:8080/user');
+                if (!response.ok) {
+                    throw new Error('Gagal mengambil data user');
                 }
-            } else {
-                // User tidak ditemukan
-                showPopup('Username / Password / Level salah!');
+                
+                // Asumsikan response JSON berbentuk array of objects
+                const users = await response.json();
+                
+                // Cari user yang cocok
+                const foundUser = users.find(u => 
+                    u.username === username &&
+                    u.password === password &&
+                    u.level === level
+                );
+
+                if (foundUser) {
+                    // Simpan data ke localStorage
+                    localStorage.setItem('username', username);
+                    localStorage.setItem('nama_mahasiswa', foundUser.nama_mahasiswa);
+                    localStorage.setItem('npm_mahasiswa', foundUser.npm);
+                    
+                    // Jika level user terdaftar di routesByLevel, arahkan ke URL yang sesuai
+                    if (routesByLevel[level]) {
+                        window.location.href = routesByLevel[level];
+                    } else {
+                        showPopup('Level tidak dikenal!');
+                    }
+                } else {
+                    // User tidak ditemukan
+                    showPopup('Username / Password / Level salah!');
+                }
+            } catch (error) {
+                console.error(error);
+                showPopup('Terjadi kesalahan pada server.');
             }
-        } 
-        catch (error) {
-            console.error(error);
-            showPopup('Terjadi kesalahan pada server.');
+        });
+
+        let popupTimeout;
+        function showPopup(message) {
+            clearTimeout(popupTimeout);
+            popupMessage.textContent = message;
+            popupNotification.style.opacity = '1';
+            popupTimeout = setTimeout(() => {
+                popupNotification.style.opacity = '0';
+            }, 3000);
         }
-    });
-
-    let popupTimeout;
-
-function showPopup(message) {
-    clearTimeout(popupTimeout);
-    popupMessage.textContent = message;
-    popupNotification.style.opacity = '1';
-    popupTimeout = setTimeout(() => {
-        popupNotification.style.opacity = '0';
-    }, 3000);
-}
- 
     </script>
 </body>
 </html>
