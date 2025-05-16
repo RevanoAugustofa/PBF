@@ -46,11 +46,12 @@
     <x-layout username="Revano Augustofa" nim="2301022071">
     <!-- Content -->
     <div class="flex-1 p-6">
-        <div class="mt-4">
+        <div class="bg-white p-4 rounded shadow mt-4 border-t-4 border-blue-400">
+            <div class="mt-4">
             <p class="text-gray-600"><i class="ri-user-fill"></i>> Timeline Pengajuan</p>
             <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Riwayat berhenti studi mahasiswa.</span></h2>
         </div>
-        
+        </div>
         {{-- <div class="border-b-2 border-blue-500 mt-4 mb-6"></div> --}}
         <!-- Tabs -->
         <div class="bg-white p-4 rounded shadow mt-4">

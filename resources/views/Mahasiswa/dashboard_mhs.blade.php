@@ -58,7 +58,7 @@
                 <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Data Studi Mahasiswa.</span></h2>
             </div>
             </div>
-            <div class="bg-white p-4 rounded shadow mt-4 border-t-4 border-gray-400">
+            <div class="bg-white p-4 rounded shadow mt-4 ">
                  <!-- Tab Menu -->
                 <div class="flex justify-between items-center border-b pb-2">
                     <div class="flex space-x-4">

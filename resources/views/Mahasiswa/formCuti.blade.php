@@ -53,7 +53,7 @@
                 <h2 class="text-2xl font-bold ">Mahasiswa <span class="text-gray-600 text-sm">Data Berhenti Studi Mahasiswa.</span></h2>
             </div>
             
-            <div class="bg-white shadow-md rounded p-4 mt-4">
+            <div class="bg-white shadow-md rounded p-4 mt-4 ">
                 <!-- Tab Menu -->
                 <div class="flex justify-between items-center border-b pb-2">
                     <div class="flex space-x-4">

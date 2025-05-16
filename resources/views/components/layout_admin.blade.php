@@ -20,21 +20,21 @@
         </a>
       </div>
       <!-- Profil -->
-      <div class="flex items-center p-4">
-        <div class="w-12 h-12 rounded-full bg-gray-300 mr-3"></div>
+      <div class="flex items-center space-x-4 p-4">
+        <img src="{{ asset('img/profile.jpg') }}" alt="Profil" class="w-10 h-10 rounded-full">
         <div>
           <h2 class="font-bold text-black">Admin</h2>
         </div>
       </div>
       <!-- Navigasi Sidebar -->
       <nav class="flex flex-col space-y-2 p-4">
-        <a href="dashboard_adm" class="py-2 px-4 bg-blue-500 rounded text-white">Dashboard</a>
+        <a href="dashboard_adm" class="py-2 px-4 bg-blue-500 rounded text-white"><i class="ri-dashboard-horizontal-fill pr-5"></i>Dashboard</a>
         <a href="data_mhs" class="py-2 px-4 bg-blue-500 rounded text-white">Mahasiswa</a>
         <a href="data_dsn_wali" class="py-2 px-4 bg-blue-500 rounded text-white">Dosen Wali</a>
         <a href="data_perpus" class="py-2 px-4 bg-blue-500 rounded text-white">Koor Perpustakaan</a>
         <a href="data_jurusan" class="py-2 px-4 bg-blue-500 rounded text-white">Ketua Jurusan</a>
         <a href="data_baup" class="py-2 px-4 bg-blue-500 rounded text-white">BAUP</a>
-        <a href="#" onclick="confirmLogout(event)" class="py-2 px-4 mt-2 hover:bg-gray-200 rounded text-black">Logout</a>
+        <a href="#" onclick="confirmLogout(event)" class="py-2 px-4 mt-2 hover:bg-gray-200 rounded text-black"><i class="ri-shut-down-line pr-5"></i>Logout</a>
       </nav>
     </aside>
 
@@ -42,8 +42,8 @@
     <div class="flex-1 flex flex-col ml-64 overflow-hidden"> <!-- ml-64 karena sidebar width nya 64 -->
       <!-- Navbar tetap di atas -->
       <nav class="bg-blue-600 text-white p-3 flex justify-end items-center sticky top-0 z-10 w-full">
-        <div class="flex items-center">
-          <div class="w-10 h-10 rounded-full bg-gray-300 mr-3"></div>
+        <div class="flex items-center space-x-4">
+          <img src="{{ asset('img/profile.jpg') }}" alt="Profil" class="w-10 h-10 rounded-full">
           <span>Admin</span>
         </div>
         <div>

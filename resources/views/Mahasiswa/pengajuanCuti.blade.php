@@ -46,12 +46,14 @@
     <x-layout username="Revano Augustofa" nim="2301022071">
         <!-- Main Content -->
         <div class="flex-1 p-6">
+            <div class="bg-white p-4 rounded shadow mt-4 border-t-4 border-blue-400">
             <div class="mt-4">
                 <p class="text-gray-600"><i class="ri-user-fill"></i>> Pengajuan Cuti</p>
                 <h2 class="text-2xl font-bold">Mahasiswa <span class="text-gray-600 text-sm">Riwayat berhenti studi mahasiswa.</span></h2>
             </div>
+            </div>
 
-            <div class="bg-white p-4 rounded shadow mt-4">
+            <div class="bg-white p-4 rounded shadow mt-4 ">
                 <div class="flex justify-between items-center border-b pb-2">
                     <div class="flex space-x-4">
                         <a href="dashboard_mhs"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Data Mahasiswa</button></a> 
@@ -72,7 +74,7 @@
                 </div>
                 
                 <div class="mt-4">
-                    <table class="w-full border border-collapse">
+                    <table class="w-full border table-auto">
                         <thead>
                             <tr class="bg-blue-600 text-white">
                                 <th class="border px-4 py-2">No</th>
@@ -82,7 +84,7 @@
                                 <th class="border px-4 py-2">Semester</th>
                                 <th class="border px-4 py-2">Dokumen Pendukung</th>
                                 <th class="border px-4 py-2">Dibatalkan</th>
-                                <th class="border px-4 py-2">Aksi</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
