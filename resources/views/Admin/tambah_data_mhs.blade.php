@@ -43,12 +43,11 @@
                 <select id="nama_mahasiswa" name="nama_mahasiswa" required class="w-full p-2 border border-gray-300 rounded-md">
                     <option value="">--- Pilih Mahasiswa ---</option>
                 </select>
+                <label for="id_user" class="block font-medium pt-4">Id User</label>
+                <input type="text" id="id_user" name="id_user" readonly class="w-full p-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed">
             </div>
 
-            <div>
-                <label for="id_user" class="block font-medium">Id User</label>
-                <input type="text" id="id_user" name="id_user" readonly disabled class="w-full p-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed">
-            </div>
+            
 
             <!-- Tempat & Tanggal Lahir -->
             <div>
