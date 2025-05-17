@@ -34,7 +34,6 @@
                     document.getElementById("agama").innerHTML = mahasiswaData.agama || "-";
                     document.getElementById("tahun_akademik").innerHTML = mahasiswaData.angkatan ||  "-";
                     document.getElementById("prodi").innerHTML = mahasiswaData.program_studi || "-";
-                    document.getElementById("jurusan").innerHTML = mahasiswaData.nama_jurusan || "-";
                     document.getElementById("alamat").innerHTML = mahasiswaData.alamat || "-";
                     document.getElementById("email").innerHTML = mahasiswaData.email || "-";
                     document.getElementById("no_hp").innerHTML = mahasiswaData.no_hp || "-";
@@ -46,6 +45,7 @@
                 console.error("Terjadi kesalahan:", error);
                 alert("Gagal mengambil data.");
             }
+           
         });
     </script>
 </head>
@@ -66,9 +66,7 @@
                         <a href="pengajuanCuti">
                             <button class="px-4 py-2 text-gray-600 border-b-4 hover:border-blue-400 hover:text-black hover:bg-gray-200 rounded-t">Pengajuan Cuti</button>
                         </a>                        
-                       <a href="riwayat">
-                        <button class="px-4 py-2 text-gray-600 border-b-4 hover:border-blue-400 hover:text-black hover:bg-gray-200 rounded-t">Timeline Pengajuan</button>
-                        </a>
+                       
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row pt-4">
@@ -83,7 +81,6 @@
                                 <tr class="bg-gray-100"><td class="p-4 font-semibold">Agama</td><td class="p-4" id="agama"></td></tr>
                                 <tr class="bg-white"><td class="p-4 font-semibold">Tahun Akademik</td><td class="p-4" id="tahun_akademik"></td></tr>
                                 <tr class="bg-gray-100"><td class="p-4 font-semibold">Program Studi</td><td class="p-4" id="prodi"></td></tr>
-                                <tr class="bg-white"><td class="p-4 font-semibold">Jurusan</td><td class="p-4" id="jurusan"></td></tr>
                                 <tr class="bg-white"><td class="p-4 font-semibold">Alamat</td><td class="p-4" id="alamat"></td></tr>
                                 <tr class="bg-gray-100"><td class="p-4 font-semibold">Email</td><td class="p-4" id="email"></td></tr>
                                 <tr class="bg-white"><td class="p-4 font-semibold">No Handphone</td><td class="p-4" id="no_hp"></td></tr>

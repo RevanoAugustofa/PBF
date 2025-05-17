@@ -30,7 +30,6 @@
                     document.getElementById("npm").textContent = mahasiswaData.npm || "-";
                     document.getElementById("nama").textContent = mahasiswaData.nama_mahasiswa || "-";
                     document.getElementById("prodi").textContent = mahasiswaData.program_studi || "-";
-                    document.getElementById("jurusan").innerHTML = mahasiswaData.jurusan || "-";
                 } else {
                     alert("Tidak ada data mahasiswa untuk username ini.");
                     console.log("Data array kosong atau tidak ada:", mahasiswa.data);
@@ -58,7 +57,6 @@
                     <div class="flex space-x-4">
                         <a href="dashboard_mhs"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Data Mahasiswa</button></a> 
                         <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Pengajuan Cuti</button>
-                        <a href="riwayat"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Timeline Pengajuan</button></a>
                     </div>
                     <a href="formCuti"><button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center">+ Tambah</button></a>
                 </div>
@@ -67,7 +65,6 @@
                   <div class="mt-4 p-4 bg-blue-100 rounded">
                     <div class="grid grid-cols-2 gap-x-8 gap-y-2">
                         <p><strong>Nama : </strong> <span id="nama"></span></p>
-                        <p><strong>Jurusan : </strong><span id="jurusan"></span></p>
                         <p><strong>NPM : </strong><span id="npm"></span></p>
                         <p><strong>Program Studi : </strong><span id="prodi"></span></p>
                     </div>

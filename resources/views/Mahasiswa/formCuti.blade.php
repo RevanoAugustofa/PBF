@@ -33,7 +33,6 @@
                 document.getElementById("npm").textContent = mahasiswaData.npm || "-";
                 document.getElementById("nama").textContent = mahasiswaData.nama_mahasiswa || "-";
                 document.getElementById("prodi").textContent = mahasiswaData.program_studi || "-";
-                document.getElementById("jurusan").innerHTML = mahasiswaData.jurusan || "-";
             } else {
                 alert("Tidak ada data mahasiswa untuk username ini.");
                 console.log("Data array kosong atau tidak ada:", mahasiswa.data);
@@ -48,9 +47,11 @@
     <x-layout username="Revano Augustofa" nim="2301022071">
         <!-- Main Content -->
         <main class="flex-1 p-6">
+            <div class="bg-white p-4 rounded shadow mt-4 border-t-4 border-blue-400">
             <div class="mt-4">
-                <p class="text-gray-600"><i class="ri-user-fill"></i>> Pengajuan Cuti > Form Cuti Mahasiswa</p>
+                 <p class="text-gray-600"><i class="ri-user-fill"></i>> Pengajuan Cuti > Form Cuti Mahasiswa</p>
                 <h2 class="text-2xl font-bold ">Mahasiswa <span class="text-gray-600 text-sm">Data Berhenti Studi Mahasiswa.</span></h2>
+            </div>
             </div>
             
             <div class="bg-white shadow-md rounded p-4 mt-4 ">
@@ -59,7 +60,6 @@
                     <div class="flex space-x-4">
                        <a href="dashboard_mhs"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded ">Data Mahasiswa</button></a> 
                        <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Pengajuan Cuti</button>
-                       <a href="riwayat"><button class="px-4 py-2  text-gray-600 hover:bg-gray-100 rounded  ">Timeline Pengajuan</button></a>
                     </div>
                 </div>
                 
@@ -67,7 +67,6 @@
                 <div class="mt-4 p-4 bg-blue-100 rounded">
                     <div class="grid grid-cols-2 gap-x-8 gap-y-2">
                         <p><strong>Nama : </strong> <span id="nama"></span></p>
-                        <p><strong>Jurusan : </strong><span id="jurusan"></span></p>
                         <p><strong>NPM : </strong><span id="npm"></span></p>
                         <p><strong>Program Studi : </strong><span id="prodi"></span></p>
                     </div>
@@ -76,18 +75,11 @@
 
             <!-- Form Cuti Mahasiswa -->
             <form action="pengajuanCuti" method="POST">
-            <div class="bg-white shadow-md rounded p-6 mt-4 border border-red-400">
+            <div class="bg-white shadow-md rounded p-6 mt-4 border">
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-gray-700 font-semibold">NPM</label>
                         <input type="text" class="border p-2 w-full rounded">
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 font-semibold">Status Studi Yang Diajukan</label>
-                        <select class="border p-2 w-full rounded">
-                            <option value="Cuti">Cuti</option>
-                            <option value="Keluar">Keluar</option>
-                        </select>
                     </div>
                     <div>
                         <label class="block text-gray-700 font-semibold">Dokumen Pendukung</label>
