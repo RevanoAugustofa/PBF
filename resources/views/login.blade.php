@@ -39,10 +39,7 @@
                     <option value="" disabled selected>Pilih peran</option>
                     <option value="admin">Admin</option>
                     <option value="mahasiswa">Mahasiswa</option>
-                    <option value="baup">BAUP</option>
-                    <option value="dosen">Dosen</option>
                     <option value="kajur">Kajur</option>
-                    <option value="perpus">Perpus</option>
                 </select>
             </div>
             

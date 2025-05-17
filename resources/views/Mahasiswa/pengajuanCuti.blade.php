@@ -80,7 +80,7 @@
                                 <th class="border px-4 py-2">Tgl Pengajuan</th>
                                 <th class="border px-4 py-2">Semester</th>
                                 <th class="border px-4 py-2">Dokumen Pendukung</th>
-                                <th class="border px-4 py-2">Dibatalkan</th>
+
                                 <th>Aksi</th>
                             </tr>
                         </thead>
