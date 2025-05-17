@@ -68,9 +68,9 @@
 
         // Rute yang dipetakan berdasarkan level user
         const routesByLevel = {
-            admin: 'http://127.0.0.1:8000/Admin/dashboard_adm',
-            mahasiswa: 'http://127.0.0.1:8000/Mahasiswa/dashboard_mhs',
-            kajur: 'http://127.0.0.1:8000/Kajur/dashboard_kajur',
+            admin: '/Admin/dashboard_adm',
+            mahasiswa: '/Mahasiswa/dashboard_mhs',
+            kajur: '/Kajur/dashboard_kajur',
         };
 
         loginForm.addEventListener('submit', async (e) => {
