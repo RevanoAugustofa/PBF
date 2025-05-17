@@ -30,10 +30,7 @@
       <nav class="flex flex-col space-y-2 p-4">
         <a href="dashboard_adm" class="py-2 px-4 bg-blue-500 rounded text-white"><i class="ri-dashboard-horizontal-fill pr-5"></i>Dashboard</a>
         <a href="data_mhs" class="py-2 px-4 bg-blue-500 rounded text-white">Mahasiswa</a>
-        <a href="data_dsn_wali" class="py-2 px-4 bg-blue-500 rounded text-white">Dosen Wali</a>
-        <a href="data_perpus" class="py-2 px-4 bg-blue-500 rounded text-white">Koor Perpustakaan</a>
         <a href="data_jurusan" class="py-2 px-4 bg-blue-500 rounded text-white">Ketua Jurusan</a>
-        <a href="data_baup" class="py-2 px-4 bg-blue-500 rounded text-white">BAUP</a>
         <a href="#" onclick="confirmLogout(event)" class="py-2 px-4 mt-2 hover:bg-gray-200 rounded text-black"><i class="ri-shut-down-line pr-5"></i>Logout</a>
       </nav>
     </aside>
