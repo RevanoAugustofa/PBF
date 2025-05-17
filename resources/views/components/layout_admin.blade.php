@@ -29,8 +29,8 @@
       <!-- Navigasi Sidebar -->
       <nav class="flex flex-col space-y-2 p-4">
         <a href="dashboard_adm" class="py-2 px-4 bg-blue-500 rounded text-white"><i class="ri-dashboard-horizontal-fill pr-5"></i>Dashboard</a>
-        <a href="data_mhs" class="py-2 px-4 bg-blue-500 rounded text-white">Mahasiswa</a>
-        <a href="data_jurusan" class="py-2 px-4 bg-blue-500 rounded text-white">Ketua Jurusan</a>
+        <a href="data_mhs" class="py-2 px-4 bg-blue-500 rounded text-white"><i class="ri-graduation-cap-fill pr-5"></i>Mahasiswa</a>
+        <a href="data_jurusan" class="py-2 px-4 bg-blue-500 rounded text-white"><i class="ri-book-2-fill pr-5"></i>Ketua Jurusan</a>
         <a href="#" onclick="confirmLogout(event)" class="py-2 px-4 mt-2 hover:bg-gray-200 rounded text-black"><i class="ri-shut-down-line pr-5"></i>Logout</a>
       </nav>
     </aside>

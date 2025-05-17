@@ -19,32 +19,12 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/coba', function () {
-    return view('coba');
-});
-
 Route::get('/Admin/dashboard_adm', function () {
     return view('Admin/dashboard_adm');
 });
 
-Route::get('/Kajur/dashboard_kjur', function () {
-    return view('Kajur/dashboard_kjur');
-});
-
 Route::get('/Mahasiswa/dashboard_mhs', function () {
     return view('Mahasiswa/dashboard_mhs');
-});
-
-Route::get('/Perpus/dashboard_prs', function () {
-    return view('Perpus/dashboard_prs');
-});
-
-Route::get('/Dosen/dashboard_dsn', function () {
-    return view('Dosen/dashboard_dsn');
-});
-
-Route::get('/Baup/dashboard_baup', function () {
-    return view('Baup/dashboard_baup');
 });
 
 Route::get('/Mahasiswa/riwayat', function () {
@@ -59,34 +39,29 @@ Route::get('/Mahasiswa/pengajuanCuti', function () {
     return view('Mahasiswa/pengajuanCuti');
 });
 
+
+//ADMIN->DATA MAHASISWA
+Route::get('/Admin/tambah_data_mhs', function () {
+    return view('Admin/tambah_data_mhs');
+});
+Route::get('/Admin/Edit/edit_mhs', function () {
+    return view('Admin/Edit/edit_mhs');
+});
 Route::get('/Admin/data_mhs', function () {
     return view('Admin/data_mhs');
 });
 
-Route::get('/Admin/data_dsn_wali', function () {
-    return view('Admin/data_dsn_wali');
+//ADMIN->DATA KAJUR
+Route::get('/Admin/tambah_data_kajur', function () {
+    return view('Admin/tambah_data_kajur');
 });
-
+Route::get('/Admin/Edit/edit_kajur', function () {
+    return view('Admin/Edit/edit_kajur');
+});
 Route::get('/Admin/data_jurusan', function () {
     return view('Admin/data_jurusan');
 });
-
-Route::get('/Admin/data_perpus', function () {
-    return view('Admin/data_perpus');
+Route::get('/Kajur/dashboard_kjur', function () {
+    return view('Kajur/dashboard_kajur');
 });
 
-Route::get('/Admin/data_baup', function () {
-    return view('Admin/data_baup');
-});
-
-Route::get('/Admin/tambah_data_mhs', function () {
-    return view('Admin/tambah_data_mhs');
-});
-
-Route::get('/Admin/tambah_data_dsn_wali', function () {
-    return view('Admin/tambah_data_dsn_wali');
-});
-
-Route::get('/Admin/Edit/edit_mhs', function () {
-    return view('Admin/Edit/edit_mhs');
-});

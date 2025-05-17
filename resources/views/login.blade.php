@@ -70,10 +70,7 @@
         const routesByLevel = {
             admin: 'http://127.0.0.1:8000/Admin/dashboard_adm',
             mahasiswa: 'http://127.0.0.1:8000/Mahasiswa/dashboard_mhs',
-            baup: 'http://127.0.0.1:8000/Baup/dashboard_baup',
-            dosen: 'http://127.0.0.1:8000/Dosen/dashboard_dsn',
-            kajur: 'http://127.0.0.1:8000/Kajur/dashboard_kjur',
-            perpus: 'http://127.0.0.1:8000/Perpus/dashboard_prs'
+            kajur: 'http://127.0.0.1:8000/Kajur/dashboard_kajur',
         };
 
         loginForm.addEventListener('submit', async (e) => {

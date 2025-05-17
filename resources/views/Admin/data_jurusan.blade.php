@@ -43,7 +43,9 @@
                     <div class="flex space-x-4">
                         <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Data Ketua Jurusan</button>
                     </div>
-                    <a href="#"><button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center">+ Tambah</button></a>
+                    <a href="tambah_data_kajur"><button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center">
+                    + Tambah</button>
+                    </a>
                 </div>
                 <div class="pt-6">
                     <table id="myTable" class="display table table-striped" style="width:100%">
@@ -52,7 +54,6 @@
                                 <th>No</th>
                                 <th>ID Ketua Jurusan</th>
                                 <th>Nama Ketua Jurusan</th>
-                                <th>NIDN</th>
                                 <th>Nama Jurusan</th>
                                 <th>ID User</th>
                                 <th>Aksi</th>
@@ -82,7 +83,6 @@
                             <td>${index + 1}</td>
                             <td>${kajur.id_kajur}</td>
                             <td>${kajur.nama_kajur}</td>
-                            <td>${kajur.nidn}</td>
                             <td>${kajur.nama_jurusan}</td>
                             <td>${kajur.id_user}</td>
                             <td class="text-center">

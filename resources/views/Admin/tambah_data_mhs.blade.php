@@ -23,7 +23,7 @@
 
             <!-- ID Dosen -->
             <div>
-                <label for="id_dosen" class="block font-medium">ID DOSEN</label>
+                <label for="id_dosen" class="block font-medium">Id Dosen</label>
                 <select id="id_dosen" name="id_dosen" required class="w-full p-2 border border-gray-300 rounded-md">
                     <option value="">--- Pilih Dosen ---</option>
                 </select>
@@ -31,7 +31,7 @@
 
             <!-- ID Kajur -->
             <div>
-                <label for="id_kajur" class="block font-medium">ID KAJUR</label>
+                <label for="id_kajur" class="block font-medium">Id Kajur</label>
                 <select id="id_kajur" name="id_kajur" required class="w-full p-2 border border-gray-300 rounded-md">
                     <option value="">--- Pilih Kajur ---</option>
                 </select>
@@ -43,7 +43,11 @@
                 <select id="nama_mahasiswa" name="nama_mahasiswa" required class="w-full p-2 border border-gray-300 rounded-md">
                     <option value="">--- Pilih Mahasiswa ---</option>
                 </select>
-                <input type="text" id="id_user" name="id_user" readonly class="w-full p-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed">
+            </div>
+
+            <div>
+                <label for="id_user" class="block font-medium">Id User</label>
+                <input type="text" id="id_user" name="id_user" readonly disabled class="w-full p-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed">
             </div>
 
             <!-- Tempat & Tanggal Lahir -->

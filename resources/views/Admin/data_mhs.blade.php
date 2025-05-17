@@ -49,7 +49,7 @@
             </div>
 
             <!-- Kontainer utama tabel -->
-            <div class="bg-white p-4 rounded shadow mt-4 border-t-4 border-gray-400 w-flex">
+            <div class="bg-white p-4 rounded shadow mt-4 border-t-4 w-flex">
                 <!-- Header aksi -->
                 <div class="flex justify-between items-center border-b pb-2">
                     <div class="flex space-x-4">
