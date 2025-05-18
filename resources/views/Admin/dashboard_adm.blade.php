@@ -42,7 +42,7 @@
             <svg class="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-4l5-5-1.4-1.4L9 11.2 7.4 9.6 6 11l3 3z" clip-rule="evenodd" />
             </svg>
-            <span class="font-medium">Success login sebagai admin</span>
+            <span class="font-medium">Sukses login sebagai admin</span>
         </div>
         <!-- Close Button -->
         <button onclick="document.getElementById('alert-success').remove()" class="text-green-600 hover:text-green-900">

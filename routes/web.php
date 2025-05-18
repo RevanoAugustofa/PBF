@@ -61,7 +61,10 @@ Route::get('/Admin/Edit/edit_kajur', function () {
 Route::get('/Admin/data_jurusan', function () {
     return view('Admin/data_jurusan');
 });
-Route::get('/Kajur/dashboard_kjur', function () {
+Route::get('/Kajur/dashboard_kajur', function () {
     return view('Kajur/dashboard_kajur');
+});
+Route::get('/Kajur/cuti', function () {
+    return view('Kajur/cuti');
 });
 

@@ -25,18 +25,24 @@
                 <select id="nama_kajur" name="nama_kajur" required class="w-full p-2 border border-gray-300 rounded-md">
                     <option value="">--- Pilih Ketua Jurusan ---</option>
                 </select>
+
+                  <!-- ID User -->
+                <label for="id_user" class="block font-medium pt-4">ID User</label>
+                <input type="text" id="id_user" name="id_user" readonly class="w-full p-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed">
+           
             </div>
 
             <!-- Nama Jurusan -->
             <div>
                 <label for="nama_jurusan" class="block font-medium">Nama Jurusan</label>
                 <input type="text" id="nama_jurusan" name="nama_jurusan" required class="w-full p-2 border border-gray-300 rounded-md">
+                
             </div>
 
-            <!-- ID User -->
+            <!-- NIDN -->
             <div>
-                <label for="id_user" class="block font-medium">ID User</label>
-                <input type="text" id="id_user" name="id_user" readonly disabled class="w-full p-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed">
+                <label for="nidn" class="block font-medium">NIDN</label>
+                <input type="text" id="nidn" name="nidn" required class="w-full p-2 border border-gray-300 rounded-md">         
             </div>
 
             <!-- Tombol -->
@@ -97,7 +103,7 @@
             .then(response => {
                 if (response.ok) {
                     alert('Data Kajur berhasil ditambahkan!');
-                    window.location.href = "data_kajur";
+                    window.location.href = "data_jurusan";
                 } else {
                     return response.json().then(error => {
                         alert(`Terjadi kesalahan: ${error.message || 'Coba lagi!'}`);

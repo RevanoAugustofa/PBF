@@ -21,14 +21,6 @@
                 <input type="text" id="npm" name="npm" required class="w-full p-2 border border-gray-300 rounded-md">
             </div>
 
-            <!-- ID Dosen -->
-            <div>
-                <label for="id_dosen" class="block font-medium">Id Dosen</label>
-                <select id="id_dosen" name="id_dosen" required class="w-full p-2 border border-gray-300 rounded-md">
-                    <option value="">--- Pilih Dosen ---</option>
-                </select>
-            </div>
-
             <!-- ID Kajur -->
             <div>
                 <label for="id_kajur" class="block font-medium">Id Kajur</label>
@@ -108,12 +100,6 @@
                 </select>
             </div>
 
-            <!-- Semester -->
-            <div>
-                <label for="semester" class="block font-medium">Semester</label>
-                <input type="text" id="semester" name="semester" required class="w-full p-2 border border-gray-300 rounded-md">
-            </div>
-
             <!-- No HP -->
             <div>
                 <label for="no_hp" class="block font-medium">No HP</label>
@@ -169,22 +155,6 @@
                 alert('Gagal terhubung ke server. Pastikan server berjalan!');
             });
         });
-    </script>
-
-    <!-- Script Dosen -->
-    <script>
-        const dosenDropdown = document.getElementById('id_dosen');
-        fetch('http://localhost:8080/dosen/')
-            .then(res => res.json())
-            .then(data => {
-                dosenDropdown.innerHTML = '<option value="">--- Pilih Dosen ---</option>';
-                data.forEach(dosen => {
-                    const option = document.createElement('option');
-                    option.value = dosen.id_dosen;
-                    option.textContent = dosen.nama_dosen;
-                    dosenDropdown.appendChild(option);
-                });
-            });
     </script>
 
     <!-- Script Kajur -->

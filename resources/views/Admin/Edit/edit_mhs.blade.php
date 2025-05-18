@@ -17,13 +17,6 @@
                 <label for="npm" class="block font-medium">NPM</label>
                 <input type="text" id="npm" name="npm" required class="w-full p-2 border border-gray-300 rounded-md">
             </div>
-            <!-- ID Dosen -->
-            <div>
-                <label for="id_dosen" class="block font-medium">ID DOSEN</label>
-                <select id="id_dosen" name="id_dosen" required class="w-full p-2 border border-gray-300 rounded-md">
-                    <option value="">--- Pilih Dosen ---</option>
-                </select>
-            </div>
             <!-- ID Kajur -->
             <div>
                 <label for="id_kajur" class="block font-medium">ID KAJUR</label>
@@ -92,11 +85,6 @@
                     <option value="Teknik Pengendalian Pencemaran Lingkungan">TPPL</option>
                 </select>
             </div>
-            <!-- Semester -->
-            <div>
-                <label for="semester" class="block font-medium">Semester</label>
-                <input type="text" id="semester" name="semester" required class="w-full p-2 border border-gray-300 rounded-md">
-            </div>
             <!-- No HP -->
             <div>
                 <label for="no_hp" class="block font-medium">No HP</label>
@@ -129,14 +117,12 @@
             const data = await res.json();
             mhsData = Array.isArray(data) ? data[0] : data.data || data;
             console.log(mhsData)
-            console.log("haloo")
 
             // Isi input selain dropdown
             document.getElementById('npm').value = mhsData.npm || '';
             document.getElementById('tempat_tanggal_lahir').value = mhsData.tempat_tanggal_lahir || '';
             document.getElementById('alamat').value = mhsData.alamat || '';
             document.getElementById('angkatan').value = mhsData.angkatan || '';
-            document.getElementById('semester').value = mhsData.semester || '';
             document.getElementById('no_hp').value = mhsData.no_hp || '';
             document.getElementById('email').value = mhsData.email || '';
             document.getElementById('program_studi').value = mhsData.program_studi || '';
@@ -157,20 +143,6 @@
         }
     };
 
-    // Fetch dropdown dosen
-    const fetchDosen = async () => {
-        const res = await fetch('http://localhost:8080/dosen/');
-        const data = await res.json();
-        const dropdown = document.getElementById('id_dosen');
-        dropdown.innerHTML = '<option value="">--- Pilih Dosen ---</option>';
-        data.forEach(d => {
-            const opt = document.createElement('option');
-            opt.value = d.id_dosen;
-            opt.textContent = d.nama_dosen;
-            dropdown.appendChild(opt);
-        });
-        if (mhsData) dropdown.value = mhsData.id_dosen || '';
-    };
 
     // Fetch dropdown kajur
     const fetchKajur = async () => {
@@ -218,7 +190,7 @@
     // Inisialisasi semua setelah DOM siap
     document.addEventListener('DOMContentLoaded', async () => {
         await fetchMahasiswa();
-        await Promise.all([fetchDosen(), fetchKajur(), fetchUser()]);
+        await Promise.all([fetchKajur(), fetchUser()]);
     });
 
     //fetch put 
@@ -245,7 +217,6 @@
 });
 
 </script>
-
 
 </body>
 </html>

@@ -76,7 +76,6 @@
                                 <th>Agama</th>
                                 <th>Angkatan</th>
                                 <th>Program Studi</th>
-                                <th>Semester</th>
                                 <th>No HP</th>
                                 <th>Email</th>
                                 <th>Aksi</th>
@@ -114,7 +113,6 @@
                                 <td>${mahasiswa.agama}</td>
                                 <td>${mahasiswa.angkatan}</td>
                                 <td>${mahasiswa.program_studi}</td>
-                                <td>${mahasiswa.semester}</td>
                                 <td>${mahasiswa.no_hp}</td>
                                 <td>${mahasiswa.email}</td>
                                 <td class="text-center">
@@ -171,6 +169,7 @@
             }
         }
     </script>
+
 
 </body>
 

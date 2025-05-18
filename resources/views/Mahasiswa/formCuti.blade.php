@@ -1,49 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
     <title>Form Pengajuan Cuti</title>
 </head>
-<script>
-    document.addEventListener("DOMContentLoaded", async function () {
-        try {
-            const username = localStorage.getItem('username');
-            console.log("Username dari localStorage:", username);
-            if (!username) {
-                alert("Silakan login terlebih dahulu.");
-                window.location.href = "/";
-                return;
-            }
-
-            const mahasiswaResponse = await fetch(`http://localhost:8080/mahasiswa/showName/${username}`);
-            if (!mahasiswaResponse.ok) throw new Error("Gagal mengambil data mahasiswa");
-            const mahasiswa = await mahasiswaResponse.json();
-            console.log("Data dari API:", mahasiswa);
-
-            if (mahasiswa.data && mahasiswa.data.length > 0) {
-                const mhs = mahasiswa.data[0];
-                document.getElementById("npm").textContent = mhs.npm || "-";
-                document.getElementById("nama").textContent = mhs.nama_mahasiswa || "-";
-                document.getElementById("prodi").textContent = mhs.program_studi || "-";
-
-                // Isi otomatis input form
-                document.getElementById("input-npm").value = mhs.npm || "";
-                document.getElementById("input-nama").value = mhs.nama_mahasiswa || "";
-                document.getElementById("input-prodi").value = mhs.program_studi || "";
-            } else {
-                alert("Tidak ada data mahasiswa untuk username ini.");
-                console.log("Data array kosong:", mahasiswa.data);
-            }
-        } catch (error) {
-            console.error("Terjadi kesalahan:", error);
-            alert("Gagal mengambil data.");
-        }
-    });
-</script>
 <body class="bg-gray-100">
     <x-layout username="Revano Augustofa" nim="2301022071">
         <main class="flex-1 p-6">
@@ -72,7 +36,7 @@
             </div>
 
             <!-- Form Pengajuan Cuti -->
-            <form action="pengajuanCuti" method="POST">
+            <form id="tambah-cuti" method="POST">
                 <div class="bg-white shadow-md rounded p-6 mt-4 border">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
@@ -81,22 +45,24 @@
                         </div>
                         <div>
                             <label class="block text-gray-700 font-semibold">Dokumen Pendukung</label>
-                            <input id="input-dokumen" name="dokumen" type="text" class="border p-2 w-full rounded">
+                            <input id="input-dokumen" name="dokumen_pendukung" type="text" class="border p-2 w-full rounded" required>
                         </div>
                         <div>
                             <label class="block text-gray-700 font-semibold">Tanggal Pengajuan</label>
-                            <input id="input-tanggal" name="tanggal_pengajuan" type="date" class="border p-2 w-full rounded">
+                            <input id="input-tanggal" name="tgl_pengajuan" type="date" class="border p-2 w-full rounded" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold">Semester</label>
+                            <input id="input-semester" name="semester" type="number" class="border p-2 w-full rounded" required>
                         </div>
                         <div class="col-span-2">
                             <label class="block text-gray-700 font-semibold">Alasan Cuti*</label>
-                            <textarea id="input-alasan" name="alasan" class="border p-2 w-full rounded"></textarea>
+                            <textarea id="input-alasan" name="alasan" class="border p-2 w-full rounded" required></textarea>
                         </div>
                     </div>
-                    <!-- Hidden Inputs -->
-                    <input type="hidden" id="input-nama" name="nama">
-                    <input type="hidden" id="input-prodi" name="prodi">
+                    <!-- Hidden Inputs status -->
+                    <input type="hidden" id="status" name="status" value="sedang diproses">
                 </div>
-
                 <div class="flex justify-end mt-4 space-x-2">
                     <a href="pengajuanCuti"><button type="button" class="px-4 py-2 bg-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white rounded"><i class="ri-arrow-left-circle-fill"></i> Kembali</button></a>
                     <button type="submit" class="px-4 py-2 bg-green-500 text-white hover:bg-green-400 rounded"><i class="ri-checkbox-circle-fill"></i> Simpan</button>
@@ -104,5 +70,79 @@
             </form>
         </main>
     </x-layout>
+
+    <!-- Script Ambil Data Mahasiswa & Set Form -->
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            try {
+                const username = localStorage.getItem('username');
+                if (!username) {
+                    alert("Silakan login terlebih dahulu.");
+                    window.location.href = "/login";
+                    return;
+                }
+
+                const response = await fetch(`http://localhost:8080/mahasiswa/showName/${username}`);
+                if (!response.ok) throw new Error("Gagal mengambil data mahasiswa");
+                const data = await response.json();
+                console.log("Data yang akan dikirim:", data);
+
+
+                if (data.data && data.data.length > 0) {
+                    const mhs = data.data[0];
+                    document.getElementById("npm").textContent = mhs.npm || "-";
+                    document.getElementById("nama").textContent = mhs.nama_mahasiswa || "-";
+                    document.getElementById("prodi").textContent = mhs.program_studi || "-";
+
+                    document.getElementById("input-npm").value = mhs.npm || "";
+
+
+                    // Set action URL berdasarkan NPM
+                    document.getElementById("tambah-cuti").action = `http://localhost:8080/cuti/${mhs.npm}`;
+                } else {
+                    alert("Tidak ada data mahasiswa.");
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Terjadi kesalahan saat mengambil data.");
+            }
+        });
+    </script>
+
+    <!-- Script Submit Form -->
+    <script>
+document.getElementById('tambah-cuti').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    const npm = data.npm; // ambil npm dari form data
+
+    fetch(`http://localhost:8080/cuti/${npm}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Data berhasil ditambahkan!');
+            window.location.href = "pengajuanCuti";
+        } else {
+            return response.json().then(errorData => {
+                alert(`Terjadi kesalahan: ${errorData.message || 'Coba lagi!'}`);
+            });
+        }
+    })
+    .catch(error => {
+        console.error("Detail error:", error);
+        alert("Gagal terhubung ke server.");
+    });
+});
+
+
+    </script>
 </body>
 </html>
