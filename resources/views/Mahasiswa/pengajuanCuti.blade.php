@@ -13,7 +13,7 @@
             const username = localStorage.getItem('username');
             if (!username) {
                 alert("Silakan login terlebih dahulu.");
-                window.location.href = "/";
+                window.location.href = "/login";
                 return;
             }
 
