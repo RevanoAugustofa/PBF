@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>SIP - Cuti</title>
+
+    <!-- Load Tailwind CSS dan Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
 
     <script>
+    // Jalankan setelah DOM siap
     document.addEventListener("DOMContentLoaded", async function () {
         try {
+            // Cek apakah user sudah login
             const username = localStorage.getItem('username');
             if (!username) {
                 alert("Silakan login terlebih dahulu.");
-                window.location.href = "/login";
+                window.location.href = "/login"; // Redirect jika belum login
                 return;
             }
 
@@ -26,21 +30,22 @@
                 const mahasiswaData = mahasiswa.data[0];
                 const npm = mahasiswaData.npm;
 
+                // Tampilkan data mahasiswa
                 document.getElementById("npm").textContent = npm || "-";
                 document.getElementById("nama").textContent = mahasiswaData.nama_mahasiswa || "-";
                 document.getElementById("prodi").textContent = mahasiswaData.program_studi || "-";
 
-                // Ambil data cuti
+                // Ambil riwayat pengajuan cuti berdasarkan npm
                 const cutiResponse = await fetch(`http://localhost:8080/cuti/npm/${npm}`);
                 const cutiResult = await cutiResponse.json();
 
                 const tbody = document.querySelector("tbody");
-                tbody.innerHTML = "";
+                tbody.innerHTML = ""; // Kosongkan tabel cuti
 
                 const btnTambah = document.getElementById("btnTambah");
 
                 if (cutiResult.data && cutiResult.data.length > 0) {
-                    // Sudah pernah mengajukan cuti
+                    // Jika sudah ada pengajuan cuti
                     cutiResult.data.forEach((cuti, index) => {
                         const tr = document.createElement("tr");
                         tr.innerHTML = `
@@ -54,16 +59,17 @@
                         tbody.appendChild(tr);
                     });
 
-                    // Cegah pengajuan kedua
+                    // Mencegah pengajuan kedua jika sudah pernah mengajukan
                     btnTambah.addEventListener("click", (e) => {
                         e.preventDefault();
                         alert("NPM sudah terdaftar untuk cuti, mahasiswa hanya boleh mengajukan cuti sekali.");
                     });
 
                 } else {
+                    // Jika belum ada pengajuan cuti
                     tbody.innerHTML = `<tr><td class="border px-4 py-2 text-center" colspan="9">Belum ada pengajuan cuti</td></tr>`;
 
-                    // Arahkan ke form cuti jika belum pernah
+                    // Izinkan untuk menambah pengajuan
                     btnTambah.addEventListener("click", () => {
                         window.location.href = "formCuti";
                     });
@@ -80,8 +86,11 @@
     </script>
 </head>
 <body class="bg-gray-100">
+    <!-- Komponen layout untuk mahasiswa -->
     <x-layout username="Revano Augustofa" nim="2301022071">
+
         <div class="flex-1 p-6">
+            <!-- Header Section -->
             <div class="bg-white p-4 rounded shadow mt-4 border-t-4 border-blue-400">
                 <div class="mt-4">
                     <p class="text-gray-600"><i class="ri-user-fill"></i> > Pengajuan Cuti</p>
@@ -89,15 +98,19 @@
                 </div>
             </div>
 
+            <!-- Kontrol Tombol -->
             <div class="bg-white p-4 rounded shadow mt-4">
                 <div class="flex justify-between items-center border-b pb-2">
+                    <!-- Navigasi tab -->
                     <div class="flex space-x-4">
                         <a href="dashboard_mhs"><button class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Data Mahasiswa</button></a>
                         <button class="px-4 py-2 border-b-4 border-blue-500 font-semibold">Pengajuan Cuti</button>
                     </div>
+                    <!-- Tombol Tambah -->
                     <button id="btnTambah" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center">+ Tambah</button>
                 </div>
 
+                <!-- Info Mahasiswa -->
                 <div class="mt-4 p-4 bg-blue-100 rounded">
                     <div class="grid grid-cols-2 gap-x-8 gap-y-2">
                         <p><strong>Nama : </strong> <span id="nama"></span></p>
@@ -106,6 +119,7 @@
                     </div>
                 </div>
 
+                <!-- Tabel Riwayat Cuti -->
                 <div class="mt-4">
                     <table class="w-full border table-auto">
                         <thead>
@@ -119,6 +133,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Data akan diisi secara dinamis lewat JavaScript -->
                             <tr>
                                 <td class="border px-4 py-2 text-center" colspan="9">Data kosong</td>
                             </tr>

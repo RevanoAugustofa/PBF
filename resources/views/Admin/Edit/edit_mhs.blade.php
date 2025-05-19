@@ -97,7 +97,7 @@
             </div>
             <!-- Submit Button -->
             <div class="flex justify-between mt-4">
-                <a href="data_mhs">
+                <a href="/Admin/data_mhs">
                     <button type="button" class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700">Kembali</button>
                 </a>
                 <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">Update Mahasiswa</button>
