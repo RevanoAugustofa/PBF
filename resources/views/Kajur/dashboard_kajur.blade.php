@@ -58,7 +58,7 @@
               <th class="px-4 py-2">Aksi</th>
             </tr>
           </thead>
-          <tbody class="text-center bg-white"></tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>
@@ -151,12 +151,7 @@
               </tr>`;
             tableBody.innerHTML += row;
           });
-
-          // Inisialisasi DataTable jika belum ada
-          if ($.fn.DataTable.isDataTable('#myTable')) {
-            $('#myTable').DataTable().destroy();
-          }
-
+          
           $('#myTable').DataTable(); // Aktifkan fitur DataTables
         })
         .catch(error => {

@@ -106,8 +106,10 @@
     </div>
 
     <script>
+    //ketika menekan tombol edit maka id mahasiswa akan terdapat pada url 
     const urlParams = new URLSearchParams(window.location.search);
     const mahasiswaId = urlParams.get('id');
+
     let mhsData = null;
 
     // Fetch data mahasiswa terlebih dahulu
@@ -173,6 +175,7 @@
             dropdown.appendChild(opt);
         });
 
+        // memberikan value berupa id user
         if (mhsData) {
             const targetOption = Array.from(dropdown.options).find(opt => opt.getAttribute('data-id_user') === String(mhsData.id_user));
             if (targetOption) {
@@ -187,7 +190,7 @@
         });
     };
 
-    // Inisialisasi semua setelah DOM siap
+    // Inisialisasi semua setelah DOM/html siap
     document.addEventListener('DOMContentLoaded', async () => {
         await fetchMahasiswa();
         await Promise.all([fetchKajur(), fetchUser()]);

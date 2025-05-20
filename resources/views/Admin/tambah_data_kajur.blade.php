@@ -17,6 +17,7 @@
         <h2 class="text-2xl font-semibold mb-4 text-center">Form Tambah Ketua Jurusan</h2>
         
         <!-- Form tambah kajur -->
+        // bisa ngepost api nya
         <form id="tambah-kajur" action="http://localhost:8080/kajur/" method="POST" class="space-y-4">
 
             <!-- Input ID Kajur -->
@@ -64,6 +65,7 @@
 
     <!-- Script: Fetch user dengan level 'kajur' dan isi dropdown -->
     <script>
+        
         const namaKajurSelect = document.getElementById('nama_kajur');
         const idUserInput = document.getElementById('id_user');
 

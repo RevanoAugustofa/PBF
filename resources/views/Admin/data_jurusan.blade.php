@@ -113,6 +113,7 @@
 
           // Inisialisasi DataTables pada tabel
           $('#myTable').DataTable();
+          
         })
         .catch(error => console.error("Error fetching data:", error)); // Tampilkan error jika fetch gagal
     });
