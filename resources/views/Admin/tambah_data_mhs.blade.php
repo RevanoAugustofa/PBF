@@ -28,7 +28,7 @@
 
             <!-- Dropdown Id Kajur, diisi dengan fetch dari server -->
             <div>
-                <label for="id_kajur" class="block font-medium">Id Kajur</label>
+                <label for="id_kajur" class="block font-medium">Kajur</label>
                 <select id="id_kajur" name="id_kajur" required class="w-full p-2 border border-gray-300 rounded-md">
                     <option value="">--- Pilih Kajur ---</option>
                 </select>
@@ -101,6 +101,8 @@
                     <option value="Teknik Rekayasa Multimedia">TRM</option>
                     <option value="Rekayasa Keamanan Siber">RKS</option>
                     <option value="Teknik Pengendalian Pencemaran Lingkungan">TPPL</option>
+                    <option value="Teknik Elektro">TE</option>
+                    <option value="Teknik Mesin">TM</option>
                 </select>
             </div>
 

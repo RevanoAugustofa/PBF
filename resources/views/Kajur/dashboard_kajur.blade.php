@@ -130,6 +130,7 @@
       fetch("http://localhost:8080/cuti")
         .then(response => response.json())
         .then(data => {
+          
           const tableBody = document.querySelector("#myTable tbody");
           tableBody.innerHTML = "";
 
@@ -152,7 +153,14 @@
             tableBody.innerHTML += row;
           });
           
-          $('#myTable').DataTable(); // Aktifkan fitur DataTables
+        // Cegah duplikat inisialisasi
+        if ($.fn.DataTable.isDataTable('#myTable')) {
+          $('#myTable').DataTable().destroy();
+        }
+
+        // Inisialisasi ulang
+        $('#myTable').DataTable();
+
         })
         .catch(error => {
           console.error("Error fetching data:", error); // Tampilkan kesalahan

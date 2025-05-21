@@ -10,6 +10,19 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
 
     <script>
+    // Fungsi untuk menampilkan notifikasi status
+    function tampilkanNotifikasi(pesan) {
+        const box = document.getElementById("notifikasiStatus");
+        const teks = document.getElementById("pesanStatus");
+        teks.textContent = pesan;
+        box.classList.remove("hidden");
+
+        // Sembunyikan otomatis setelah 5 detik
+        setTimeout(() => {
+            box.classList.add("hidden");
+        }, 30000);
+    }
+
     // Jalankan setelah DOM siap
     document.addEventListener("DOMContentLoaded", async function () {
         try {
@@ -46,6 +59,8 @@
 
                 if (cutiResult.data && cutiResult.data.length > 0) {
                     // Jika sudah ada pengajuan cuti
+                    let sudahNotifikasi = false; // Hindari notifikasi berulang
+
                     cutiResult.data.forEach((cuti, index) => {
                         const tr = document.createElement("tr");
                         tr.innerHTML = `
@@ -57,9 +72,15 @@
                             <td class="border px-4 py-2">${cuti.dokumen_pendukung || '-'}</td>
                         `;
                         tbody.appendChild(tr);
+
+                        //notifikasi jika status bukan "sedang diproses"
+                        if (cuti.status.toLowerCase() !== "sedang diproses" && !sudahNotifikasi) {
+                            tampilkanNotifikasi(`Status pengajuan Cuti Anda telah "${cuti.status}" Oleh Kajur.`);
+                            sudahNotifikasi = true;
+                        }
                     });
 
-                    // Mencegah pengajuan kedua jika sudah pernah mengajukan
+                    // Mencegah pengajuan kedua jika sudah pernah mengajukan cuti
                     btnTambah.addEventListener("click", (e) => {
                         e.preventDefault();
                         alert("NPM sudah terdaftar untuk cuti, mahasiswa hanya boleh mengajukan cuti sekali.");
@@ -142,6 +163,23 @@
                 </div>
             </div>
         </div>
+
+        <!-- Notifikasi status -->
+        <div id="notifikasiStatus" class="hidden fixed top-5 right-5 animate-pulse bg-white border border-black-300 text-sm text-gray-700 shadow-lg rounded-lg p-4 z-50 flex items-start gap-3 max-w-sm">
+            <div>
+               <i class="ri-circle-fill"></i>
+            </div>
+            <div class="flex-1">
+                <strong class="font-medium block">Status Cuti</strong>
+                <span id="pesanStatus" class="text-gray-600 block text-sm"></span>
+            </div>
+            <button onclick="document.getElementById('notifikasiStatus').classList.add('hidden')" class="ml-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
     </x-layout>
 </body>
 </html>

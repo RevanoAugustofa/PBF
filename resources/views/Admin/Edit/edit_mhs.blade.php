@@ -19,7 +19,7 @@
             </div>
             <!-- ID Kajur -->
             <div>
-                <label for="id_kajur" class="block font-medium">ID KAJUR</label>
+                <label for="id_kajur" class="block font-medium">Kajur</label>
                 <select id="id_kajur" name="id_kajur" required class="w-full p-2 border border-gray-300 rounded-md">
                     <option value="">--- Pilih Kajur ---</option>
                 </select>

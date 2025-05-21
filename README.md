@@ -12,19 +12,20 @@
 
 - Pastikan sistem Anda sudah terinstall:
 - PHP >= 8.2
-- Composer
-- Laravel 12 (Proyek Anda sudah dibuat atau di-clone)
+- Composer (Dependency Manager PHP)
+- Web Server (Apache/Nginx dll)
+- Database (MySQL, SQLite, dsb)
 
 ## Setup & Instalasi
 
-1. Clone Repository (Jika Belum Ada)
+1. Clone Repository 
 ```bash 
 git clone https://github.com/user/repo.git
 cd nama-proyek
 ```
-2. Instal Dependency PHP
+2. Update Dependency PHP
 ```bash 
-composer install
+composer update
 ```
 3. Copy File Environment & Generate App Key
 ```bash

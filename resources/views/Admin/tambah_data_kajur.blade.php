@@ -17,7 +17,7 @@
         <h2 class="text-2xl font-semibold mb-4 text-center">Form Tambah Ketua Jurusan</h2>
         
         <!-- Form tambah kajur -->
-        // bisa ngepost api nya
+        {{-- bisa ngepost api nya --}}
         <form id="tambah-kajur" action="http://localhost:8080/kajur/" method="POST" class="space-y-4">
 
             <!-- Input ID Kajur -->
@@ -53,7 +53,7 @@
             <!-- Tombol Aksi -->
             <div class="flex justify-between mt-4">
                 <!-- Tombol kembali ke halaman data -->
-                <a href="data_kajur">
+                <a href="data_jurusan">
                     <button type="button" class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700">Kembali</button>
                 </a>
                 
